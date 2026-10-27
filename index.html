@@ -41,6 +41,47 @@
   @keyframes pop { 0%{transform:translateY(0) scale(.4);opacity:1}100%{transform:translateY(-130px) rotate(35deg) scale(1.5);opacity:0} }
   .badge { display:inline-block;background:#fff45c;border:2px dashed #251044;padding:5px 8px;margin:4px;transform:rotate(-3deg); }
   @media(max-width:800px){.layout{grid-template-columns:1fr}.sticker,.sticker:nth-child(3){transform:none}.layout .main{order:-1}}
+
+  /* PIXEL ARMY: visual retrô quadradinho */
+  body {font-family:'Press Start 2P',monospace!important;font-size:10px;color:#211047;background-color:#170d3b;background-image:radial-gradient(#b98aff 1px,transparent 1px),linear-gradient(180deg,#21104e,#4c2384 55%,#e1a5ff);background-size:13px 13px,100% 100%;image-rendering:pixelated}
+  .top,.address,.banner,.ticker,.sticker,.main {border-radius:0!important;box-shadow:5px 5px 0 #10072b!important;border:3px solid #211047!important}
+  .top{background:#160b3b!important;color:#f5d9ff!important;border-bottom:4px solid #d86bff!important;font-size:9px!important}
+  .address{background:#2b175c!important;color:#ead6ff!important}
+  .banner{background:linear-gradient(180deg,#21104e,#5b2692 60%,#24104f)!important;border-bottom:4px solid #d86bff!important}
+  h1{font-family:'Press Start 2P',monospace!important;font-size:clamp(1.25rem,4vw,3rem)!important;line-height:1.7;text-shadow:4px 4px 0 #170b3d!important;transform:none!important}
+  .subtitle{font-size:10px!important;line-height:2;color:#f7dcff}
+  .ticker{background:#10072b!important;color:#f5c8ff!important;border-color:#d86bff!important}
+  .layout{max-width:1200px!important;gap:14px!important}
+  .sticker,.main{background:#efd9ff!important;border-radius:0!important;border:4px solid #211047!important;box-shadow:6px 6px 0 #10072b!important;padding:15px!important}
+  .sticker,.sticker:nth-child(3){transform:none!important}
+  h2{font-family:'Press Start 2P',monospace!important;font-size:12px!important;line-height:2;color:#6324ba}
+  p,.label,.caption,.connection,.status{font-family:'Press Start 2P',monospace!important;font-size:9px!important;line-height:2!important}
+  .eyebrow{border-radius:0!important;transform:none!important;background:#7d36df!important;padding:8px!important;line-height:2}
+  button{font-family:'Press Start 2P',monospace!important;font-size:10px!important;line-height:2;border-radius:0!important;border:3px solid #211047!important;background:#8b45ff!important;box-shadow:4px 4px 0 #211047!important}
+  button:active{transform:translate(4px,4px);box-shadow:none!important}
+  #loveBtn{background:#8b45ff!important}
+  .meter{border-radius:0!important;border:3px solid #211047!important;background:#fff!important}
+  .fill{background:repeating-linear-gradient(90deg,#d86bff 0 12px,#8b45ff 12px 24px)!important}
+  .counter{color:#6324ba!important;line-height:1.7}
+  .badge{border-radius:0!important;border:2px solid #211047!important;background:#ffe27a!important}
+  .pixel-stage{position:relative;overflow:hidden;margin:25px 14px 0;height:150px;border:4px solid #211047;box-shadow:6px 6px 0 #10072b;background:linear-gradient(180deg,#29145a,#6f35b5 70%,#d78cff 70%,#d78cff 76%,#5c2b9c 76%,#5c2b9c 100%)}
+  .pixel-stage:before{content:'✦ · ♡ · ✧ · ♡ · ✦';position:absolute;top:10px;left:0;width:100%;text-align:center;color:#fbe2ff;font-size:13px;letter-spacing:8px}
+  .pixel-stage:after{content:'BTS ♡ ARMY ♡ BOR AHAE ♡ BTS';position:absolute;bottom:6px;left:0;width:100%;text-align:center;color:#fff0ff;font-size:8px;letter-spacing:1px}
+  .pixel-walkers{position:absolute;bottom:25px;left:-45%;display:flex;align-items:flex-end;gap:15px;animation:army-parade 22s linear infinite;white-space:nowrap}
+  .pixel-person{display:inline-flex;flex-direction:column;align-items:center;width:36px;height:65px;animation:pixel-bob .42s steps(2,end) infinite alternate}
+  .pixel-person:nth-child(even){animation-delay:-.2s}
+  .pixel-head{width:24px;height:22px;background:#f4c3a4;border:4px solid #211047;position:relative;z-index:2}
+  .pixel-head:before{content:'';position:absolute;left:-5px;top:-8px;width:24px;height:10px;background:var(--hair,#30234f);border:3px solid #211047;box-shadow:0 5px 0 var(--hair,#30234f)}
+  .pixel-body{width:28px;height:23px;background:var(--shirt,#8b45ff);border:4px solid #211047;margin-top:-1px}
+  .pixel-legs{width:28px;height:17px;position:relative}
+  .pixel-legs:before,.pixel-legs:after{content:'';position:absolute;top:0;width:9px;height:15px;background:#211047;box-shadow:0 4px 0 #fff;animation:pixel-step .35s steps(2,end) infinite alternate}
+  .pixel-legs:before{left:2px}.pixel-legs:after{right:2px;animation-delay:-.18s}
+  @keyframes army-parade{from{transform:translateX(0)}to{transform:translateX(420%)}}
+  @keyframes pixel-bob{from{transform:translateY(0)}to{transform:translateY(-4px)}}
+  @keyframes pixel-step{from{transform:translateX(-2px)}to{transform:translateX(3px)}}
+  @media(max-width:800px){.layout{grid-template-columns:1fr}.pixel-stage{height:125px}.pixel-walkers{gap:8px}}
+  @media(prefers-reduced-motion:reduce){.pixel-walkers,.pixel-person,.pixel-legs:before,.pixel-legs:after{animation:none!important}}
+
 </style>
 </head>
 <body>
@@ -76,6 +117,17 @@
       <p>💌 lembrete: beba água e faça carinho em si mesmo também!</p>
     </aside>
   </main>
+  <section class="pixel-stage" aria-label="sete bonequinhos em pixel art caminhando juntos">
+    <div class="pixel-walkers" aria-hidden="true">
+      <span class="pixel-person" style="--hair:#25213f;--shirt:#8b45ff"><i class="pixel-head"></i><i class="pixel-body"></i><i class="pixel-legs"></i></span>
+      <span class="pixel-person" style="--hair:#9b5539;--shirt:#f4e7ff"><i class="pixel-head"></i><i class="pixel-body"></i><i class="pixel-legs"></i></span>
+      <span class="pixel-person" style="--hair:#17172f;--shirt:#25213f"><i class="pixel-head"></i><i class="pixel-body"></i><i class="pixel-legs"></i></span>
+      <span class="pixel-person" style="--hair:#f3d18b;--shirt:#f4e7ff"><i class="pixel-head"></i><i class="pixel-body"></i><i class="pixel-legs"></i></span>
+      <span class="pixel-person" style="--hair:#9298ae;--shirt:#202d71"><i class="pixel-head"></i><i class="pixel-body"></i><i class="pixel-legs"></i></span>
+      <span class="pixel-person" style="--hair:#a85c37;--shirt:#2476e8"><i class="pixel-head"></i><i class="pixel-body"></i><i class="pixel-legs"></i></span>
+      <span class="pixel-person" style="--hair:#24203d;--shirt:#25213f"><i class="pixel-head"></i><i class="pixel-body"></i><i class="pixel-legs"></i></span>
+    </div>
+  </section>
   <div class="footer">
     <div class="fake-meme">💜 🐨 🐹 🐱 🐿️ 🐥 🐻 🐰 💜</div>
     <p>FEITO COM 7% DE HTML E 393847% DE AMOR</p><p>방탄소년단 사랑해요!!! ✨ #BORAHAE</p>
