@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EU ILOVE BTS 💜</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Press+Start+2P&display=swap');
+  :root { --pink:#ff4fc8; --purple:#8c52ff; --yellow:#fff45c; --blue:#76f7ff; }
+  * { box-sizing:border-box; }
+  body { margin:0; color:#251044; font-family:'Comic Neue',cursive; background:repeating-linear-gradient(45deg,#fbd5ff 0 18px,#d9c5ff 18px 36px,#c4faff 36px 54px); overflow-x:hidden; }
+  .top { background:#fff; border-bottom:4px solid #271044; padding:9px 15px; font:12px Arial,sans-serif; position:sticky;top:0;z-index:4; }
+  .address { background:#eee; border-radius:20px; padding:8px 14px; margin-top:7px; color:#444; }
+  .banner { text-align:center; padding:25px 12px 16px; background:linear-gradient(90deg,#ff75da,#d8a8ff,#83f5ff,#fff45c); border-bottom:5px dashed #fff; }
+  h1 { margin:0; color:#fff; font-size:clamp(2.1rem,7vw,5rem); text-shadow:4px 4px 0 #6822aa,-2px -2px 0 #ff269e,7px 7px 0 #251044; transform:rotate(-2deg); }
+  .subtitle { font-size:1.25rem; margin:15px 0 0; font-weight:bold; }
+  .ticker { background:#251044;color:#fff45c;padding:9px;white-space:nowrap;overflow:hidden;font-weight:bold; }
+  .ticker span { display:inline-block; animation:marquee 17s linear infinite; }
+  @keyframes marquee { from{transform:translateX(100%)}to{transform:translateX(-100%)} }
+  .layout { max-width:1100px; margin:22px auto; padding:0 14px; display:grid;grid-template-columns:1fr 1.35fr 1fr;gap:16px;align-items:start; }
+  .sticker,.main { border:4px solid #251044; box-shadow:7px 7px 0 #251044; border-radius:18px; padding:16px; }
+  .sticker { background:#fff; text-align:center; font-size:1.15rem; transform:rotate(-2deg); }
+  .sticker:nth-child(3){transform:rotate(2deg);background:#fff8a8}
+  .main { background:#fff; text-align:center; position:relative; }
+  .eyebrow { display:inline-block;background:#ff4fc8;color:white;padding:7px 12px;border-radius:99px;transform:rotate(2deg);font-weight:bold; }
+  .counter { font:clamp(1.7rem,5vw,3.4rem) 'Press Start 2P',monospace; color:#7a2ce0; margin:22px 0 10px; overflow-wrap:anywhere; }
+  .label { font-size:1.2rem; font-weight:bold; }
+  .meter { height:25px;border:3px solid #251044;border-radius:99px;overflow:hidden;background:#eee;margin:15px 0; }
+  .fill { height:100%;width:0%;background:repeating-linear-gradient(45deg,#ff4fc8 0 10px,#fff45c 10px 20px);transition:width .2s; }
+  button { border:3px solid #251044;background:#ff4fc8;color:#fff;font:bold 1.15rem 'Comic Neue',cursive;padding:14px 18px;border-radius:16px;box-shadow:4px 4px 0 #251044;cursor:pointer;transition:transform .08s; }
+  button:active { transform:translate(4px,4px);box-shadow:none; }
+  button:disabled { opacity:.55;cursor:wait; }
+  #loveBtn { width:100%;font-size:1.4rem;background:#8c52ff;margin:8px 0 12px; }
+  .smallbtn { font-size:.9rem;background:#fff45c;color:#251044;padding:8px 11px; }
+  .status { min-height:30px;font-weight:bold;color:#b40083;margin:10px 0; }
+  .connection { font-size:.85rem; margin:8px 0; color:#555; }
+  .fake-meme { font-size:3.3rem;line-height:1.2; }
+  .caption { font-size:1rem; }
+  .footer { text-align:center;margin:25px 10px 35px;font-weight:bold; }
+  .pop { position:fixed;pointer-events:none;z-index:10;font-size:2rem;animation:pop .9s ease-out forwards; }
+  @keyframes pop { 0%{transform:translateY(0) scale(.4);opacity:1}100%{transform:translateY(-130px) rotate(35deg) scale(1.5);opacity:0} }
+  .badge { display:inline-block;background:#fff45c;border:2px dashed #251044;padding:5px 8px;margin:4px;transform:rotate(-3deg); }
+  @media(max-width:800px){.layout{grid-template-columns:1fr}.sticker,.sticker:nth-child(3){transform:none}.layout .main{order:-1}}
+</style>
+</head>
+<body>
+  <div class="top">💜 EU ILOVE BTS — site oficialmente não oficial <div class="address">💻 o contador é coletivo: cada clique soma para todo mundo!</div></div>
+  <header class="banner">
+    <h1>EU ILOVE BTS 💜</h1>
+    <p class="subtitle">CLIQUE E PROVE SEU AMOR PELOS MENINOS!!! 🫵😭✨</p>
+  </header>
+  <div class="ticker"><span>💜 BTS PAVED THE WAY 💜 borahae 💜 7 anjos e 1 fandom surtado 💜 CLIQUE CLique CLIQUE 💜 stream de amor infinito 💜</span></div>
+  <main class="layout">
+    <aside class="sticker">
+      <div class="fake-meme">🐱💜🐹</div><h2>EU DEPOIS DE OUVIR BTS</h2>
+      <div class="fake-meme">😭🤏</div><p>“vou ouvir só uma música”</p>
+      <p><b>3 horas depois:</b><br>SEVEN HUNDRED PLAYLISTS</p><span class="badge">100% ARMY</span>
+    </aside>
+    <section class="main">
+      <span class="eyebrow">⚠️ TESTE CIENTÍFICO REAL (fonte: vozes da minha cabeça)</span>
+      <h2>QUANTO TODO MUNDO AMA O BTS???</h2>
+      <div class="counter" id="count" aria-live="polite">…</div>
+      <div class="label">cliques de amor de TODOS os ARMYs 💜🌎</div>
+      <div class="meter"><div class="fill" id="fill"></div></div>
+      <button id="loveBtn" disabled>💜 CONECTANDO AO AMOR… 💜</button>
+      <div class="status" id="status">conectando ao contador mundial… ✨</div>
+      <div class="connection" id="connection">aguarde a conexão com o banco de dados compartilhado.</div>
+      <p>cada clique = +1 borahae para o contador global ✨</p>
+      <button class="smallbtn" id="bonusBtn" disabled>🚀 MODO SURTO (+10)</button>
+      <p class="caption">*contador coletivo de fãs; não é uma métrica oficial do BTS.</p>
+    </section>
+    <aside class="sticker">
+      <div class="fake-meme">🫵😎</div><h2>ARMY DETECTADO</h2>
+      <div class="fake-meme">💜</div>
+      <p>diagnóstico: amor pelo BTS em níveis completamente normais (confia).</p><hr>
+      <p>💌 lembrete: beba água e faça carinho em si mesmo também!</p>
+    </aside>
+  </main>
+  <div class="footer">
+    <div class="fake-meme">💜 🐨 🐹 🐱 🐿️ 🐥 🐻 🐰 💜</div>
+    <p>FEITO COM 7% DE HTML E 393847% DE AMOR</p><p>방탄소년단 사랑해요!!! ✨ #BORAHAE</p>
+  </div>
+
+  <!--
+    CONFIGURAÇÃO:
+    1) Crie um projeto Firebase e um Realtime Database.
+    2) A configuração do seu app Firebase já está preenchida neste arquivo.
+    3) No Realtime Database, crie totalClicks com valor numérico 0.
+    4) Configure as regras conforme o guia que acompanha este arquivo.
+    Nunca publique credenciais de conta de serviço. A configuração do app web não é uma chave secreta,
+    mas as regras do banco são essenciais para limitar abuso.
+  -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+    import { getDatabase, ref, onValue, runTransaction } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyB9KkOfv8t5IcKo4fibFkO5jhyVa1zpAOo",
+      authDomain: "eu-ilove-bts.firebaseapp.com",
+      databaseURL: "https://eu-ilove-bts-default-rtdb.firebaseio.com",
+      projectId: "eu-ilove-bts",
+      storageBucket: "eu-ilove-bts.firebasestorage.app",
+      messagingSenderId: "1075259955753",
+      appId: "1:1075259955753:web:97fa18f8b0bfca2fdb1a38",
+      measurementId: "G-5N2Z0XLRGV"
+    };
+
+    const countEl = document.getElementById('count');
+    const fillEl = document.getElementById('fill');
+    const statusEl = document.getElementById('status');
+    const connectionEl = document.getElementById('connection');
+    const loveBtn = document.getElementById('loveBtn');
+    const bonusBtn = document.getElementById('bonusBtn');
+    let database;
+    let totalRef;
+    let connected = false;
+    let lastKnownTotal = 0;
+
+    function setButtons(enabled) {
+      loveBtn.disabled = !enabled;
+      bonusBtn.disabled = !enabled;
+      loveBtn.textContent = enabled ? '💜 EU AMO O BTS!!! 💜' : '💜 CONECTANDO AO AMOR… 💜';
+    }
+
+    function updateStatus(total) {
+      if (total === 0) return 'seja o primeiro a espalhar borahae!!! 💜';
+      if (total < 10) return 'o surto coletivo começou!!! 🫡';
+      if (total < 50) return 'ARMY EM TREINAMENTO!!! 💜';
+      if (total < 100) return 'O FANDOM TÁ FICANDO ROXO 😭💜';
+      if (total < 500) return 'O FANDOM TÁ CRESCENDO!!! 💜';
+      if (total < 1000) return 'O BTS SENTIU UMA PERTURBAÇÃO NA FORÇA 💥';
+      return 'AMOR INFINITO DETECTADO. CHAMEM A BIG HIT 🚨💜';
+    }
+
+    function render(total) {
+      lastKnownTotal = total;
+      countEl.textContent = total.toLocaleString('pt-BR');
+      fillEl.style.width = (total % 101) + '%';
+      statusEl.textContent = updateStatus(total);
+    }
+
+    function burst(x, y) {
+      const emojis = ['💜','✨','😭','🫰','🐨','🐹','🐱','🐿️','🐥','🐻','🐰'];
+      for (let i = 0; i < 5; i++) {
+        const el = document.createElement('span');
+        el.className = 'pop';
+        el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        el.style.left = (x + (Math.random() * 100 - 50)) + 'px';
+        el.style.top = (y + (Math.random() * 40 - 20)) + 'px';
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 950);
+      }
+    }
+
+    async function addClicks(amount, event) {
+      if (!connected || !totalRef) return;
+      setButtons(false);
+      connectionEl.textContent = 'enviando seu amor para o contador global… 💌';
+      try {
+        const result = await runTransaction(totalRef, current => {
+          if (current === null) return 0;
+          if (typeof current !== 'number') return;
+          return current + amount;
+        });
+        if (!result.committed) {
+          throw new Error('A atualização não foi aceita. Confira se totalClicks foi criado com valor 0 e se as regras do banco estão corretas.');
+        }
+        burst(event.clientX, event.clientY);
+        connectionEl.textContent = 'conectado! seu amor já entrou no total de todo mundo 🌎💜';
+      } catch (error) {
+        console.error(error);
+        connectionEl.textContent = 'não deu para registrar o clique. Confira a configuração e as regras do Firebase.';
+        statusEl.textContent = 'ops 😭 o banco recusou o clique. tente novamente depois.';
+      } finally {
+        setButtons(connected);
+      }
+    }
+
+    const looksConfigured = !Object.values(firebaseConfig).some(v => v.startsWith('COLE_AQUI_'));
+    if (!looksConfigured) {
+      countEl.textContent = '💜';
+      statusEl.textContent = 'falta conectar o Firebase para contar o amor de todo mundo!';
+      connectionEl.textContent = 'a configuração do Firebase ainda precisa ser conferida.';
+      loveBtn.textContent = '💜 CONFIGURE O FIREBASE 💜';
+    } else {
+      try {
+        const app = initializeApp(firebaseConfig);
+        database = getDatabase(app);
+        totalRef = ref(database, 'totalClicks');
+        onValue(totalRef, snapshot => {
+          if (typeof snapshot.val() !== 'number') {
+            connected = false;
+            setButtons(false);
+            connectionEl.textContent = 'crie totalClicks no banco com valor numérico 0 para começar.';
+            return;
+          }
+          connected = true;
+          render(snapshot.val());
+          setButtons(true);
+          connectionEl.textContent = '🟢 conectado ao contador global em tempo real!';
+        }, error => {
+          console.error(error);
+          connected = false;
+          setButtons(false);
+          connectionEl.textContent = 'erro de leitura. confira a URL do banco e as regras do Firebase.';
+        });
+      } catch (error) {
+        console.error(error);
+        connectionEl.textContent = 'configuração Firebase inválida. confira os dados do app web.';
+      }
+    }
+
+    loveBtn.addEventListener('click', event => addClicks(1, event));
+    bonusBtn.addEventListener('click', event => addClicks(10, event));
+  </script>
+</body>
+</html>
