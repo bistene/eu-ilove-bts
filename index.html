@@ -90,7 +90,22 @@
   .club-panel button{font-size:9px!important}.pixel-person{cursor:pointer;pointer-events:auto}
   .pixel-walkers{pointer-events:none}.pixel-person:hover{filter:drop-shadow(0 0 7px #fff45c)}
   @media(max-width:800px){.club-extra{grid-template-columns:1fr}}
-.club-area{max-width:1200px;margin:22px auto;padding:0 14px;display:grid;grid-template-columns:1fr 1fr;gap:16px}.club-area article{background:#f7e6ff;border:4px solid #211047;box-shadow:6px 6px #10072b;padding:18px;min-width:0}.club-area input{width:100%;padding:10px;border:2px solid #211047;margin:6px 0;font:14px Arial}.club-area button{font-size:9px!important;margin:4px}.club-area p,.club-area li{font:13px/1.6 Arial,sans-serif!important}.club-area h2{font-size:12px!important}.chat-feed{height:220px;overflow:auto;background:white;border:2px solid #211047;padding:10px}.club-area [hidden]{display:none!important}@media(max-width:800px){.club-area{grid-template-columns:1fr}}</style>
+.club-area{max-width:1200px;margin:22px auto;padding:0 14px;display:grid;grid-template-columns:1fr 1fr;gap:16px}.club-area article{background:#f7e6ff;border:4px solid #211047;box-shadow:6px 6px #10072b;padding:18px;min-width:0}.club-area input{width:100%;padding:10px;border:2px solid #211047;margin:6px 0;font:14px Arial}.club-area button{font-size:9px!important;margin:4px}.club-area p,.club-area li{font:13px/1.6 Arial,sans-serif!important}.club-area h2{font-size:12px!important}.chat-feed{height:220px;overflow:auto;background:white;border:2px solid #211047;padding:10px}.club-area [hidden]{display:none!important}@media(max-width:800px){.club-area{grid-template-columns:1fr}}
+  /* ARMY NEWS: editorial pixel art */
+  .army-news{max-width:1150px;margin:26px auto;padding:20px;background:#fff8ff;border:4px solid #281047;box-shadow:8px 8px 0 #8c52ff}
+  .army-news h2{font-family:'Press Start 2P',monospace;font-size:clamp(13px,2vw,21px);line-height:1.7;margin:0 0 12px;color:#6423b3}
+  .news-intro{margin:0 0 18px;line-height:1.5}
+  .news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,255px),1fr));gap:15px}
+  .news-card{background:#fff;border:3px solid #281047;padding:16px;box-shadow:4px 4px 0 #ff9de6;display:flex;flex-direction:column;gap:9px}
+  .news-card.featured{background:#f0e0ff;border-color:#7b31d2}
+  .news-tag{font-family:'Press Start 2P',monospace;font-size:9px;line-height:1.7;color:#6b249e}
+  .news-card h3{font-size:1.22rem;line-height:1.3;margin:0}
+  .news-card p{margin:0;line-height:1.5}
+  .news-card a{margin-top:auto;display:inline-block;width:fit-content;padding:10px 12px;background:#7f38dc;color:#fff;text-decoration:none;border:2px solid #281047;font-weight:700}
+  .news-card a:focus-visible,.news-card a:hover{background:#48108b;outline:3px solid #ffc2ef;outline-offset:2px}
+  .news-foot{margin:20px 0 0;font-size:.9rem;line-height:1.5}
+  @media(max-width:650px){.army-news{margin:20px 12px;padding:15px;box-shadow:5px 5px 0 #8c52ff}}
+</style>
 </head>
 <body>
   <div class="top">💜 EU ILOVE BTS — site oficialmente não oficial <div class="address">💻 o contador é coletivo: cada clique soma para todo mundo!</div></div>
@@ -125,6 +140,50 @@
       <p>💌 lembrete: beba água e faça carinho em si mesmo também!</p>
     </aside>
   </main>
+
+  <section class="army-news" id="army-news" aria-labelledby="army-news-title">
+    <h2 id="army-news-title">📰 ARMY NEWS · BTS AGORA</h2>
+    <p class="news-intro">Novidades dos sete meninos, com data e fonte. Notícias sobre aparições e projetos <strong>divulgados publicamente</strong> — sem boatos nem localização em tempo real. 💜</p>
+    <div class="news-grid">
+      <article class="news-card featured">
+        <span class="news-tag">🇧🇷 28 OUT 2026 · GRUPO</span>
+        <h3>BTS se apresenta em São Paulo e conversa em português com ARMYs</h3>
+        <p>O septeto iniciou a passagem da turnê ARIRANG pelo MorumBIS. Jimin falou em português durante o show e Jungkook agradeceu aos fãs em um ensaio.</p>
+        <a href="https://gshow.globo.com/cultura-pop/musica/noticia/integrantes-do-bts-falam-em-portugues-durante-1o-show-no-brasil-vamos-fazer-um-show-incrivel.ghtml" target="_blank" rel="noopener noreferrer">Ler no gshow ↗</a>
+      </article>
+      <article class="news-card">
+        <span class="news-tag">📅 28, 30 E 31 OUT · AGENDA</span>
+        <h3>Onde estão em atividade pública? Turnê ARIRANG no Brasil</h3>
+        <p>O calendário oficial confirma apresentações do BTS no MorumBIS, em São Paulo, nos dias 28, 30 e 31 de outubro. Agenda pública, não localização pessoal.</p>
+        <a href="https://bighitsmusic.com/bts/tour" target="_blank" rel="noopener noreferrer">Agenda oficial ↗</a>
+      </article>
+      <article class="news-card">
+        <span class="news-tag">🎨 24 OUT 2026 · RM</span>
+        <h3>RM leva sua coleção de arte a museu em São Francisco</h3>
+        <p>A exposição RM x SFMOMA: Between You and Me reúne obras de sua coleção e do museu. A mostra está prevista até fevereiro de 2027.</p>
+        <a href="https://www.theguardian.com/artanddesign/2026/oct/24/rm-bts-sfmoma-exhibition" target="_blank" rel="noopener noreferrer">Ler no The Guardian ↗</a>
+      </article>
+      <article class="news-card">
+        <span class="news-tag">🕺 28 OUT 2026 · J-HOPE</span>
+        <h3>j-hope entra no clima brasileiro com vídeo de dança</h3>
+        <p>O artista publicou uma coreografia no TikTok misturando funk brasileiro com a música “Please”, do BTS.</p>
+        <a href="https://f5.folha.uol.com.br/celebridades/2026/10/j-hope-do-bts-danca-funk-brasileiro-e-manda-recado-se-voce-quiser.shtml" target="_blank" rel="noopener noreferrer">Ler na Folha ↗</a>
+      </article>
+      <article class="news-card">
+        <span class="news-tag">🎬 25 OUT 2026 · JUNGKOOK</span>
+        <h3>Clipe “3D” alcança 300 milhões de visualizações</h3>
+        <p>A Billboard Brasil destacou a marca do vídeo de Jungkook, lançado originalmente em 2023.</p>
+        <a href="https://billboard.com.br/artistas/bts/" target="_blank" rel="noopener noreferrer">Ver na Billboard Brasil ↗</a>
+      </article>
+      <article class="news-card">
+        <span class="news-tag">💜 FONTE OFICIAL · TODOS</span>
+        <h3>Vlogs, bastidores e conteúdos dos sete integrantes</h3>
+        <p>Veja as publicações oficiais do BTS no Weverse, incluindo vlogs de V, RM e SUGA e vídeos dos bastidores da turnê.</p>
+        <a href="https://weverse.io/bts/media" target="_blank" rel="noopener noreferrer">Abrir Weverse ↗</a>
+      </article>
+    </div>
+    <p class="news-foot">🗓️ <strong>Seleção editorial atualizada em 28/10/2026.</strong> As matérias são links externos e esta lista não se atualiza automaticamente. Para novidades mais recentes, consulte <a href="https://weverse.io/bts/notice" target="_blank" rel="noopener noreferrer">avisos oficiais do BTS</a> e <a href="https://billboard.com.br/artistas/bts/" target="_blank" rel="noopener noreferrer">Billboard Brasil</a>. Informações de redes sociais só devem ser tratadas como confirmadas quando publicadas por perfis oficiais ou verificadas por fontes confiáveis.</p>
+  </section>
   <section class="club-extra">
     <div class="club-panel"><h2>🎵 BTS RADIO</h2><iframe title="BTS no Spotify" src="https://open.spotify.com/embed/artist/3Nrfpe0tUJi4K4DXYWgMUX" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe><p>Player oficial Spotify 💜</p></div>
     <div class="club-panel"><h2>🏆 ARMY CLUB</h2><p>Em breve: cadastro, ranking individual e chat em tempo real.</p><p>O contador continua público para todos!</p></div>
