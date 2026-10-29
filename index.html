@@ -258,6 +258,49 @@ body{background-color:#130a35!important;background-image:radial-gradient(circle 
 .sprite-scene .pixel-cat.cat-happy img{animation:cat-happy .6s steps(3,end) 1}
 @media(max-width:700px){.sprite-scene .pixel-person{width:13vw!important;height:100px!important;min-width:0!important}.sprite-scene .sprite-plant{width:44px;height:80px;bottom:88px}.sprite-scene .pixel-cat{width:55px!important;height:70px!important}}
 @media(prefers-reduced-motion:reduce){.sprite-scene .pixel-person,.sprite-scene .pixel-cat img{animation:none!important}}
+
+/* Reconstrucao baseada na referencia: painéis sobre skyline, uma composicao so */
+body{background:#160b35!important;background-image:radial-gradient(#d784f9 1px,transparent 1.5px),linear-gradient(180deg,#13072d,#42206c 65%,#6e2e88)!important;background-size:37px 37px,100% 100%!important}
+.illustrated-hero{position:relative;isolation:isolate;max-width:1920px;margin:0 auto 48px;padding:52px 24px 0;overflow:hidden;background:radial-gradient(ellipse at 50% 75%,#e66eac88 0%,transparent 43%),radial-gradient(ellipse at 50% 8%,#512a98 0%,transparent 64%),linear-gradient(#120a31,#29114f 62%,#733284 91%,#210b3c);border-bottom:5px solid #b65bd6}
+.illustrated-hero:before{content:"";position:absolute;inset:0 0 auto;height:74%;z-index:-1;pointer-events:none;background-image:radial-gradient(#ffb8ff 1.3px,transparent 2px),radial-gradient(#fff4d5 2px,transparent 3px);background-size:51px 69px,139px 113px;background-position:8px 10px,32px 27px;opacity:.75}
+.hero-sparkles{position:absolute;top:15px;left:0;width:100%;color:#ffbaf9;text-align:center;letter-spacing:clamp(14px,5vw,100px);font-size:16px;pointer-events:none;opacity:.9}
+.hero-love-note{position:absolute;top:20px;left:28px;z-index:2;transform:rotate(-8deg);font:bold clamp(13px,2vw,23px) 'Comic Neue',cursive;color:#f596f3;text-shadow:0 0 15px #f57ce9}
+.illustrated-hero .layout{position:relative;z-index:7;max-width:1660px!important;display:grid!important;grid-template-columns:minmax(0,1.02fr) minmax(0,1.22fr) minmax(0,1fr)!important;gap:20px!important;align-items:stretch!important;margin:32px auto 0!important;padding:0 12px!important}
+.illustrated-hero .layout .sticker,.illustrated-hero .layout .main{border:4px solid #bc68f9!important;border-radius:14px!important;background:linear-gradient(180deg,#24104ceF,#190c39f5)!important;box-shadow:0 0 0 4px #0d0525,0 0 0 6px #9a4ad5,0 12px 25px #07041aaa!important;min-height:510px!important;padding:17px!important;backdrop-filter:blur(5px)}
+.illustrated-hero .layout .main{border-color:#dc82ff!important}
+.illustrated-hero .window-bar{margin:-17px -17px 20px!important;padding:14px 16px!important;background:linear-gradient(90deg,#5c27a7,#321364)!important;border:0!important;border-bottom:3px solid #ac63e8!important;border-radius:9px 9px 0 0;font-size:11px}
+.illustrated-hero .layout .main .eyebrow{margin:-17px -17px 16px!important;padding:13px 10px!important;border:0!important;border-bottom:3px solid #b66bea!important;background:linear-gradient(90deg,#6027ad,#3c1a78)!important;font-size:10px}
+.illustrated-hero .layout h2{font-size:clamp(10px,1.1vw,15px)!important;color:#fff0ff!important;line-height:1.9!important}
+.illustrated-hero .layout .counter{font-size:clamp(34px,4vw,72px)!important;letter-spacing:2px;color:#fff2ff!important;text-shadow:0 0 8px #ffb1ff,0 0 22px #e45cfa,4px 5px #8e2aaf!important}
+.illustrated-hero .layout .radio-window iframe{height:300px!important;border-radius:7px!important}
+.illustrated-hero .radio-title{color:#f5d4ff!important}
+.illustrated-hero .radio-link{border-radius:12px!important;background:linear-gradient(#9c48ec,#6821b5)!important;border:2px solid #c785ff!important}
+.illustrated-hero .layout #loveBtn{border-radius:9px!important;background:linear-gradient(180deg,#ba4df5,#7a29d5)!important;font-size:clamp(11px,1.4vw,17px)!important;min-height:66px;box-shadow:0 0 14px #bd55e288!important}
+.illustrated-hero .layout #bonusBtn{border-radius:8px!important}
+.illustrated-hero .layout .meter{height:27px!important;border-radius:5px!important}
+.illustrated-hero .layout .sticker:last-child{display:flex;flex-direction:column;align-items:center;gap:7px}
+.illustrated-hero .army-heart{font-size:75px;filter:drop-shadow(0 0 18px #dc66ff);margin:16px 0 0}
+.illustrated-hero .level-pill{border-radius:7px!important;background:#bb71ec!important;font-size:10px}
+.illustrated-hero .layout .sticker:last-child p{font-size:10px!important;line-height:2.2!important}
+.illustrated-hero .pixel-rooftop{margin:-6px auto 0!important;height:265px!important;min-height:265px!important;max-width:1680px!important;overflow:visible!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:linear-gradient(180deg,transparent 0%,#a948ab33 36%,#6c2c83 78%,#1a0b33 100%)!important}
+.illustrated-hero .pixel-rooftop .scene-heading{display:none}
+.illustrated-hero .pixel-rooftop .pixel-moon{top:4px!important;left:50%!important;width:63px!important;height:63px!important;opacity:.6}
+.illustrated-hero .pixel-rooftop .pixel-city{bottom:63px!important}
+.illustrated-hero .pixel-rooftop .city-back{height:205px!important}
+.illustrated-hero .pixel-rooftop .city-front{height:115px!important;bottom:61px!important}
+.illustrated-hero .pixel-rooftop .pixel-walkers{bottom:60px!important;gap:clamp(0px,1vw,14px)!important}
+.illustrated-hero .pixel-rooftop .pixel-person{width:clamp(48px,6.5vw,100px)!important;height:135px!important}
+.illustrated-hero .pixel-rooftop .pixel-cat{bottom:65px!important}
+.illustrated-hero .pixel-rooftop .sprite-plant{bottom:65px!important}
+.illustrated-hero .pixel-rooftop .rooftop-ledge{bottom:42px!important;height:28px!important}
+.illustrated-hero .pixel-rooftop:after{height:68px!important}
+.illustrated-hero .pixel-rooftop .rooftop-message{bottom:9px!important}
+.illustrated-hero .skyline-caption{display:none}
+.illustrated-hero .scene-controls{max-width:1660px!important;margin:0 auto 12px!important;padding:8px 0!important;gap:8px!important}
+.illustrated-hero .scene-controls button{font-size:8px!important;padding:7px 12px!important;opacity:.75}
+.illustrated-hero .scene-controls p{margin:0!important;font-size:10px!important}
+@media(max-width:980px){.illustrated-hero{padding:35px 14px 0}.illustrated-hero .layout{grid-template-columns:repeat(2,minmax(0,1fr))!important}.illustrated-hero .layout .main{grid-column:1 / -1!important;grid-row:1!important}.illustrated-hero .layout .sticker{grid-row:2!important}.illustrated-hero .layout .sticker,.illustrated-hero .layout .main{min-height:0!important}.illustrated-hero .radio-window iframe{height:260px!important}}
+@media(max-width:620px){.illustrated-hero{padding:25px 12px 0}.hero-love-note{position:relative;top:0;left:0;text-align:center;margin-bottom:10px}.illustrated-hero .layout{grid-template-columns:1fr!important;gap:22px!important}.illustrated-hero .layout .main,.illustrated-hero .layout .sticker{grid-column:1!important;grid-row:auto!important}.illustrated-hero .layout .main{grid-row:1!important}.illustrated-hero .layout .sticker{min-height:0!important}.illustrated-hero .pixel-rooftop{height:220px!important;min-height:220px!important}.illustrated-hero .pixel-rooftop .pixel-person{width:12vw!important;height:93px!important}.illustrated-hero .pixel-rooftop .pixel-walkers{bottom:53px!important}.illustrated-hero .pixel-rooftop .pixel-cat{bottom:58px!important}.illustrated-hero .pixel-rooftop .sprite-plant{bottom:58px!important}.illustrated-hero .pixel-rooftop .rooftop-ledge{bottom:37px!important}.illustrated-hero .pixel-rooftop .rooftop-message{bottom:6px!important;font-size:6px!important}.illustrated-hero .layout .counter{font-size:clamp(30px,9vw,48px)!important}}
 </style>
 </head>
 <body>
@@ -267,7 +310,7 @@ body{background-color:#130a35!important;background-image:radial-gradient(circle 
     <p class="subtitle">CLIQUE E PROVE SEU AMOR PELOS MENINOS!!! 🫵😭✨</p>
   </header>
   <div class="ticker"><span>💜 BTS PAVED THE WAY 💜 borahae 💜 7 anjos e 1 fandom surtado 💜 CLIQUE CLique CLIQUE 💜 stream de amor infinito 💜</span></div>
-  <main class="layout">
+  <div class="illustrated-hero"><div class="hero-sparkles" aria-hidden="true">✦ ♡ ✧ ✦ ♡ ✧ ✦</div><div class="hero-love-note" aria-hidden="true">♥ I PURPLE YOU</div><main class="layout">
     <aside class="sticker radio-window"><div class="window-bar">♫ BTS RADIO · ARIRANG <span>□ ×</span></div><div class="radio-content"><div class="radio-title">💿 ARIRANG <small>· BTS</small></div><iframe title="Álbum ARIRANG do BTS no Spotify" src="https://open.spotify.com/embed/album/3ukkRHDHbN8tNRPKsGZR1h" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe><a class="radio-link" href="https://open.spotify.com/album/3ukkRHDHbN8tNRPKsGZR1h" target="_blank" rel="noopener noreferrer">♫ ÁLBUM COMPLETO NO SPOTIFY ↗</a><p>💜 I PURPLE YOU · BTS FOREVER</p></div></aside>
     <section class="main">
       <span class="eyebrow">⚠️ TESTE CIENTÍFICO REAL (fonte: vozes da minha cabeça)</span>
@@ -283,12 +326,31 @@ body{background-color:#130a35!important;background-image:radial-gradient(circle 
       <p class="caption">*contador coletivo de fãs; não é uma métrica oficial do BTS.</p>
     </section>
     <aside class="sticker">
-      <div class="window-bar">♡ ARMY DETECTADO <span>□ ×</span></div><div class="fake-meme">💜</div><h2>ARMY DETECTADO</h2>
+      <div class="window-bar">♡ ARMY DETECTADO <span>□ ×</span></div><div class="army-heart" aria-hidden="true">💜</div><h2>ARMY DETECTADO</h2>
       <div class="level-pill">♡ NÍVEL ARMY ♡</div>
       <p>diagnóstico: amor pelo BTS em níveis completamente normais (confia).</p><hr>
       <p>💌 lembrete: beba água e faça carinho em si mesmo também!</p><p>✨ escute BTS hoje · você está indo muito bem!</p>
     </aside>
   </main>
+<div class="skyline-caption">OUR LITTLE PURPLE UNIVERSE <span>✦</span></div>
+<section class="pixel-stage pixel-rooftop sprite-scene" aria-label="Terraço ilustrado com sete personagens, dois gatos, plantas e cidade noturna">
+<div class="scene-heading" aria-hidden="true"><span>THE MAGIC SHOP</span><small>where ARMY hearts meet ♡</small></div>
+<div class="pixel-moon" aria-hidden="true"></div><div class="pixel-city city-back" aria-hidden="true"></div><div class="pixel-city city-front" aria-hidden="true"></div>
+<img class="sprite-plant plant-left" src="./assets/sprites/plant.svg" alt="" loading="lazy">
+<img class="sprite-plant plant-right" src="./assets/sprites/plant.svg" alt="" loading="lazy">
+<button type="button" class="pixel-cat cat-left" aria-label="Fazer carinho no gatinho da esquerda"><img src="./assets/sprites/cat-lilac.svg" alt="" loading="lazy"></button>
+<button type="button" class="pixel-cat cat-right" aria-label="Fazer carinho no gatinho da direita"><img src="./assets/sprites/cat-peach.svg" alt="" loading="lazy"></button>
+<div class="pixel-walkers" aria-label="Sete personagens interativos"><button class="pixel-person" type="button" aria-label="Personagem 1: enviar carinho"><img src="./assets/sprites/army-1.svg" alt="" loading="lazy"></button>
+<button class="pixel-person" type="button" aria-label="Personagem 2: enviar carinho"><img src="./assets/sprites/army-2.svg" alt="" loading="lazy"></button>
+<button class="pixel-person" type="button" aria-label="Personagem 3: enviar carinho"><img src="./assets/sprites/army-3.svg" alt="" loading="lazy"></button>
+<button class="pixel-person" type="button" aria-label="Personagem 4: enviar carinho"><img src="./assets/sprites/army-4.svg" alt="" loading="lazy"></button>
+<button class="pixel-person" type="button" aria-label="Personagem 5: enviar carinho"><img src="./assets/sprites/army-5.svg" alt="" loading="lazy"></button>
+<button class="pixel-person" type="button" aria-label="Personagem 6: enviar carinho"><img src="./assets/sprites/army-6.svg" alt="" loading="lazy"></button>
+<button class="pixel-person" type="button" aria-label="Personagem 7: enviar carinho"><img src="./assets/sprites/army-7.svg" alt="" loading="lazy"></button></div>
+<div class="rooftop-ledge" aria-hidden="true"></div><div class="rooftop-message" aria-hidden="true">BTS ♡ ARMY FOREVER · SAME DREAM, SAME STARS</div>
+</section>
+  <div class="scene-controls" aria-label="Controles do cenário"><button id="sceneMotion" type="button" aria-pressed="true">⏸ PAUSAR ANIMAÇÕES</button><button id="sceneTheme" type="button" aria-pressed="false">☀ MODO AMANHECER</button><p id="sceneStatus" role="status" aria-live="polite">Toque nos personagens e gatinhos para interagir! 💜</p></div>
+</div>
 
   <section class="army-news" id="army-news" aria-labelledby="army-news-title">
     <h2 id="army-news-title">📰 ARMY NEWS · BTS AGORA</h2>
@@ -352,25 +414,7 @@ body{background-color:#130a35!important;background-image:radial-gradient(circle 
   <article id="account"><h2>👤 CONTA ARMY</h2><p id="authState">Carregando…</p><div id="authFields"><input id="nick" maxlength="22" placeholder="Seu nome ARMY (cadastro)" aria-label="Nome ARMY"><input id="email" type="email" placeholder="Seu e-mail" autocomplete="email" aria-label="E-mail"><input id="password" type="password" minlength="6" placeholder="Senha" autocomplete="current-password" aria-label="Senha"><button id="login">ENTRAR</button><button id="signup">CADASTRAR</button></div><button id="logout" hidden>SAIR</button><p id="authError" role="status"></p><p id="myScore">Entre para salvar seus cliques 💜</p></article>
   <article><h2>🏆 RANKING ARMY</h2><ol id="rankingList"><li>Carregando…</li></ol><p>Somente cliques de contas entram no ranking.</p></article>
   <article><h2>💬 CHAT ARMY</h2><div id="chatFeed" class="chat-feed">Entre para conversar 💜</div><form id="chatForm"><input id="chatText" maxlength="240" placeholder="Sua mensagem" aria-label="Mensagem" disabled><button id="sendChat" type="submit" disabled>ENVIAR</button></form><p id="chatStatus" role="status"></p></article>
-  </section><div class="skyline-caption">OUR LITTLE PURPLE UNIVERSE <span>✦</span></div>
-<section class="pixel-stage pixel-rooftop sprite-scene" aria-label="Terraço ilustrado com sete personagens, dois gatos, plantas e cidade noturna">
-<div class="scene-heading" aria-hidden="true"><span>THE MAGIC SHOP</span><small>where ARMY hearts meet ♡</small></div>
-<div class="pixel-moon" aria-hidden="true"></div><div class="pixel-city city-back" aria-hidden="true"></div><div class="pixel-city city-front" aria-hidden="true"></div>
-<img class="sprite-plant plant-left" src="./assets/sprites/plant.svg" alt="" loading="lazy">
-<img class="sprite-plant plant-right" src="./assets/sprites/plant.svg" alt="" loading="lazy">
-<button type="button" class="pixel-cat cat-left" aria-label="Fazer carinho no gatinho da esquerda"><img src="./assets/sprites/cat-lilac.svg" alt="" loading="lazy"></button>
-<button type="button" class="pixel-cat cat-right" aria-label="Fazer carinho no gatinho da direita"><img src="./assets/sprites/cat-peach.svg" alt="" loading="lazy"></button>
-<div class="pixel-walkers" aria-label="Sete personagens interativos"><button class="pixel-person" type="button" aria-label="Personagem 1: enviar carinho"><img src="./assets/sprites/army-1.svg" alt="" loading="lazy"></button>
-<button class="pixel-person" type="button" aria-label="Personagem 2: enviar carinho"><img src="./assets/sprites/army-2.svg" alt="" loading="lazy"></button>
-<button class="pixel-person" type="button" aria-label="Personagem 3: enviar carinho"><img src="./assets/sprites/army-3.svg" alt="" loading="lazy"></button>
-<button class="pixel-person" type="button" aria-label="Personagem 4: enviar carinho"><img src="./assets/sprites/army-4.svg" alt="" loading="lazy"></button>
-<button class="pixel-person" type="button" aria-label="Personagem 5: enviar carinho"><img src="./assets/sprites/army-5.svg" alt="" loading="lazy"></button>
-<button class="pixel-person" type="button" aria-label="Personagem 6: enviar carinho"><img src="./assets/sprites/army-6.svg" alt="" loading="lazy"></button>
-<button class="pixel-person" type="button" aria-label="Personagem 7: enviar carinho"><img src="./assets/sprites/army-7.svg" alt="" loading="lazy"></button></div>
-<div class="rooftop-ledge" aria-hidden="true"></div><div class="rooftop-message" aria-hidden="true">BTS ♡ ARMY FOREVER · SAME DREAM, SAME STARS</div>
-</section>
-  <div class="scene-controls" aria-label="Controles do cenário"><button id="sceneMotion" type="button" aria-pressed="true">⏸ PAUSAR ANIMAÇÕES</button><button id="sceneTheme" type="button" aria-pressed="false">☀ MODO AMANHECER</button><p id="sceneStatus" role="status" aria-live="polite">Toque nos personagens e gatinhos para interagir! 💜</p></div>
-  <div class="footer">
+  </section>  <div class="footer">
     <div class="fake-meme">💜 🐨 🐹 🐱 🐿️ 🐥 🐻 🐰 💜</div>
     <p>FEITO COM 7% DE HTML E 393847% DE AMOR</p><p>방탄소년단 사랑해요!!! ✨ #BORAHAE</p>
   </div>
