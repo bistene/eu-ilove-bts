@@ -90,7 +90,7 @@
   .club-panel button{font-size:9px!important}.pixel-person{cursor:pointer;pointer-events:auto}
   .pixel-walkers{pointer-events:none}.pixel-person:hover{filter:drop-shadow(0 0 7px #fff45c)}
   @media(max-width:800px){.club-extra{grid-template-columns:1fr}}
-</style>
+.club-area{max-width:1200px;margin:22px auto;padding:0 14px;display:grid;grid-template-columns:1fr 1fr;gap:16px}.club-area article{background:#f7e6ff;border:4px solid #211047;box-shadow:6px 6px #10072b;padding:18px;min-width:0}.club-area input{width:100%;padding:10px;border:2px solid #211047;margin:6px 0;font:14px Arial}.club-area button{font-size:9px!important;margin:4px}.club-area p,.club-area li{font:13px/1.6 Arial,sans-serif!important}.club-area h2{font-size:12px!important}.chat-feed{height:220px;overflow:auto;background:white;border:2px solid #211047;padding:10px}.club-area [hidden]{display:none!important}@media(max-width:800px){.club-area{grid-template-columns:1fr}}</style>
 </head>
 <body>
   <div class="top">💜 EU ILOVE BTS — site oficialmente não oficial <div class="address">💻 o contador é coletivo: cada clique soma para todo mundo!</div></div>
@@ -128,6 +128,11 @@
   <section class="club-extra">
     <div class="club-panel"><h2>🎵 BTS RADIO</h2><iframe title="BTS no Spotify" src="https://open.spotify.com/embed/artist/3Nrfpe0tUJi4K4DXYWgMUX" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe><p>Player oficial Spotify 💜</p></div>
     <div class="club-panel"><h2>🏆 ARMY CLUB</h2><p>Em breve: cadastro, ranking individual e chat em tempo real.</p><p>O contador continua público para todos!</p></div>
+  </section><section class="club-area">
+  <article id="account"><h2>👤 CONTA ARMY</h2><p id="authState">Carregando…</p><div id="authFields"><input id="nick" maxlength="22" placeholder="Seu nome ARMY (cadastro)" aria-label="Nome ARMY"><input id="email" type="email" placeholder="Seu e-mail" autocomplete="email" aria-label="E-mail"><input id="password" type="password" minlength="6" placeholder="Senha" autocomplete="current-password" aria-label="Senha"><button id="login">ENTRAR</button><button id="signup">CADASTRAR</button></div><button id="logout" hidden>SAIR</button><p id="authError" role="status"></p><p id="myScore">Entre para salvar seus cliques 💜</p></article>
+  <article><h2>🏆 RANKING ARMY</h2><ol id="rankingList"><li>Carregando…</li></ol><p>Somente cliques de contas entram no ranking.</p></article>
+  <article><h2>💬 CHAT ARMY</h2><div id="chatFeed" class="chat-feed">Entre para conversar 💜</div><form id="chatForm"><input id="chatText" maxlength="240" placeholder="Sua mensagem" aria-label="Mensagem" disabled><button id="sendChat" type="submit" disabled>ENVIAR</button></form><p id="chatStatus" role="status"></p></article>
+  <article><h2>💜 PIXEL CLUB</h2><p>O contador continua aberto para todo mundo! Entre para participar do ranking e do chat. Toque nos bonequinhos para interagir.</p></article>
   </section><section class="pixel-stage" aria-label="sete bonequinhos em pixel art caminhando juntos">
     <div class="pixel-walkers" aria-hidden="true">
       <span class="pixel-person" style="--hair:#25213f;--shirt:#8b45ff"><i class="pixel-head"></i><i class="pixel-body"></i><i class="pixel-legs"></i></span>
@@ -153,142 +158,6 @@
     Nunca publique credenciais de conta de serviço. A configuração do app web não é uma chave secreta,
     mas as regras do banco são essenciais para limitar abuso.
   -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
-    import { getDatabase, ref, onValue, runTransaction } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyB9KkOfv8t5IcKo4fibFkO5jhyVa1zpAOo",
-      authDomain: "eu-ilove-bts.firebaseapp.com",
-      databaseURL: "https://eu-ilove-bts-default-rtdb.firebaseio.com",
-      projectId: "eu-ilove-bts",
-      storageBucket: "eu-ilove-bts.firebasestorage.app",
-      messagingSenderId: "1075259955753",
-      appId: "1:1075259955753:web:97fa18f8b0bfca2fdb1a38",
-      measurementId: "G-5N2Z0XLRGV"
-    };
-
-    const countEl = document.getElementById('count');
-    const fillEl = document.getElementById('fill');
-    const statusEl = document.getElementById('status');
-    const connectionEl = document.getElementById('connection');
-    const loveBtn = document.getElementById('loveBtn');
-    const bonusBtn = document.getElementById('bonusBtn');
-    let database;
-    let totalRef;
-    let connected = false;
-    let lastKnownTotal = 0;
-
-    function setButtons(enabled) {
-      loveBtn.disabled = !enabled;
-      bonusBtn.disabled = !enabled;
-      loveBtn.textContent = enabled ? '💜 EU AMO O BTS!!! 💜' : '💜 CONECTANDO AO AMOR… 💜';
-    }
-
-    function updateStatus(total) {
-      if (total === 0) return 'seja o primeiro a espalhar borahae!!! 💜';
-      if (total < 10) return 'o surto coletivo começou!!! 🫡';
-      if (total < 50) return 'ARMY EM TREINAMENTO!!! 💜';
-      if (total < 100) return 'O FANDOM TÁ FICANDO ROXO 😭💜';
-      if (total < 500) return 'O FANDOM TÁ CRESCENDO!!! 💜';
-      if (total < 1000) return 'O BTS SENTIU UMA PERTURBAÇÃO NA FORÇA 💥';
-      return 'AMOR INFINITO DETECTADO. CHAMEM A BIG HIT 🚨💜';
-    }
-
-    function render(total) {
-      lastKnownTotal = total;
-      countEl.textContent = total.toLocaleString('pt-BR');
-      fillEl.style.width = (total % 101) + '%';
-      statusEl.textContent = updateStatus(total);
-    }
-
-    function burst(x, y) {
-      const emojis = ['💜','✨','😭','🫰','🐨','🐹','🐱','🐿️','🐥','🐻','🐰'];
-      for (let i = 0; i < 5; i++) {
-        const el = document.createElement('span');
-        el.className = 'pop';
-        el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-        el.style.left = (x + (Math.random() * 100 - 50)) + 'px';
-        el.style.top = (y + (Math.random() * 40 - 20)) + 'px';
-        document.body.appendChild(el);
-        setTimeout(() => el.remove(), 950);
-      }
-    }
-
-    async function addClicks(amount, event) {
-      if (!connected || !totalRef) return;
-      setButtons(false);
-      connectionEl.textContent = 'enviando seu amor para o contador global… 💌';
-      try {
-        const result = await runTransaction(totalRef, current => {
-          if (current === null) return 0;
-          if (typeof current !== 'number') return;
-          return current + amount;
-        });
-        if (!result.committed) {
-          throw new Error('A atualização não foi aceita. Confira se totalClicks foi criado com valor 0 e se as regras do banco estão corretas.');
-        }
-        burst(event.clientX, event.clientY);
-        connectionEl.textContent = 'conectado! seu amor já entrou no total de todo mundo 🌎💜';
-      } catch (error) {
-        console.error(error);
-        connectionEl.textContent = 'não deu para registrar o clique. Confira a configuração e as regras do Firebase.';
-        statusEl.textContent = 'ops 😭 o banco recusou o clique. tente novamente depois.';
-      } finally {
-        setButtons(connected);
-      }
-    }
-
-    const looksConfigured = !Object.values(firebaseConfig).some(v => v.startsWith('COLE_AQUI_'));
-    if (!looksConfigured) {
-      countEl.textContent = '💜';
-      statusEl.textContent = 'falta conectar o Firebase para contar o amor de todo mundo!';
-      connectionEl.textContent = 'a configuração do Firebase ainda precisa ser conferida.';
-      loveBtn.textContent = '💜 CONFIGURE O FIREBASE 💜';
-    } else {
-      try {
-        const app = initializeApp(firebaseConfig);
-        database = getDatabase(app);
-        totalRef = ref(database, 'totalClicks');
-        onValue(totalRef, snapshot => {
-          if (typeof snapshot.val() !== 'number') {
-            connected = false;
-            setButtons(false);
-            connectionEl.textContent = 'crie totalClicks no banco com valor numérico 0 para começar.';
-            return;
-          }
-          connected = true;
-          render(snapshot.val());
-          setButtons(true);
-          connectionEl.textContent = '🟢 conectado ao contador global em tempo real!';
-        }, error => {
-          console.error(error);
-          connected = false;
-          setButtons(false);
-          connectionEl.textContent = 'erro de leitura. confira a URL do banco e as regras do Firebase.';
-        });
-      } catch (error) {
-        console.error(error);
-        connectionEl.textContent = 'configuração Firebase inválida. confira os dados do app web.';
-      }
-    }
-
-    loveBtn.addEventListener('click', event => addClicks(1, event));
-    bonusBtn.addEventListener('click', event => addClicks(10, event));
-
-    document.querySelectorAll('.pixel-person').forEach((character,index)=>{
-      character.setAttribute('role','button');
-      character.setAttribute('tabindex','0');
-      character.setAttribute('aria-label','Bonequinho pixelado '+(index+1));
-      const react=()=>{
-        const rect=character.getBoundingClientRect();
-        burst(rect.left+rect.width/2,rect.top+rect.height/2);
-      };
-      character.addEventListener('click',react);
-      character.addEventListener('keydown',event=>{
-        if(event.key==='Enter'||event.key===' '){event.preventDefault();react();}
-      });
-    });
-  </script>
+  <script type="module" src="./club.js"></script>
 </body>
 </html>
