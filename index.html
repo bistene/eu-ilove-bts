@@ -82,6 +82,14 @@
   @media(max-width:800px){.layout{grid-template-columns:1fr}.pixel-stage{height:125px}.pixel-walkers{gap:8px}}
   @media(prefers-reduced-motion:reduce){.pixel-walkers,.pixel-person,.pixel-legs:before,.pixel-legs:after{animation:none!important}}
 
+
+  .club-extra{max-width:1200px;margin:22px auto;padding:0 14px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .club-panel{background:#f7e6ff;border:4px solid #211047;box-shadow:6px 6px #10072b;padding:18px}
+  .club-panel h2{margin-top:0}.club-panel iframe{width:100%;height:152px;border:0}
+  .club-panel input{padding:10px;border:3px solid #211047;width:100%;margin:8px 0}
+  .club-panel button{font-size:9px!important}.pixel-person{cursor:pointer;pointer-events:auto}
+  .pixel-walkers{pointer-events:none}.pixel-person:hover{filter:drop-shadow(0 0 7px #fff45c)}
+  @media(max-width:800px){.club-extra{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -117,7 +125,10 @@
       <p>💌 lembrete: beba água e faça carinho em si mesmo também!</p>
     </aside>
   </main>
-  <section class="pixel-stage" aria-label="sete bonequinhos em pixel art caminhando juntos">
+  <section class="club-extra">
+    <div class="club-panel"><h2>🎵 BTS RADIO</h2><iframe title="BTS no Spotify" src="https://open.spotify.com/embed/artist/3Nrfpe0tUJi4K4DXYWgMUX" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe><p>Player oficial Spotify 💜</p></div>
+    <div class="club-panel"><h2>🏆 ARMY CLUB</h2><p>Em breve: cadastro, ranking individual e chat em tempo real.</p><p>O contador continua público para todos!</p></div>
+  </section><section class="pixel-stage" aria-label="sete bonequinhos em pixel art caminhando juntos">
     <div class="pixel-walkers" aria-hidden="true">
       <span class="pixel-person" style="--hair:#25213f;--shirt:#8b45ff"><i class="pixel-head"></i><i class="pixel-body"></i><i class="pixel-legs"></i></span>
       <span class="pixel-person" style="--hair:#9b5539;--shirt:#f4e7ff"><i class="pixel-head"></i><i class="pixel-body"></i><i class="pixel-legs"></i></span>
@@ -264,6 +275,20 @@
 
     loveBtn.addEventListener('click', event => addClicks(1, event));
     bonusBtn.addEventListener('click', event => addClicks(10, event));
+
+    document.querySelectorAll('.pixel-person').forEach((character,index)=>{
+      character.setAttribute('role','button');
+      character.setAttribute('tabindex','0');
+      character.setAttribute('aria-label','Bonequinho pixelado '+(index+1));
+      const react=()=>{
+        const rect=character.getBoundingClientRect();
+        burst(rect.left+rect.width/2,rect.top+rect.height/2);
+      };
+      character.addEventListener('click',react);
+      character.addEventListener('keydown',event=>{
+        if(event.key==='Enter'||event.key===' '){event.preventDefault();react();}
+      });
+    });
   </script>
 </body>
 </html>
