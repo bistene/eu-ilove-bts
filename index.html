@@ -139,6 +139,37 @@ body{background-color:#130a35!important;background-image:radial-gradient(circle 
 .club-area article p,.club-area article li{color:#f9eaff}
 @media(max-width:1000px){.layout{grid-template-columns:repeat(2,minmax(0,1fr))!important}.layout .main{grid-column:1 / -1;grid-row:1}.layout .sticker{grid-row:2}}
 @media(max-width:650px){.layout{grid-template-columns:1fr!important;gap:20px!important}.layout .main,.layout .sticker{grid-column:1!important;grid-row:auto!important}.layout .main{grid-row:1!important}.radio-window iframe{height:310px}.layout .counter{font-size:clamp(1.8rem,9vw,3.2rem)!important}}
+
+/* Rooftop pixel scene: decoracao criada em CSS, sem imagens externas */
+.pixel-rooftop{height:310px!important;max-width:1480px;isolation:isolate;overflow:hidden;background:linear-gradient(#180b41 0%,#39206b 45%,#ad54b2 78%,#2b164c 79%)!important}
+.pixel-rooftop:before{content:"✦    ✧      ✦    ·      ✧       ✦    ·    ✦";position:absolute;z-index:1;inset:10px 0 auto;color:#ffe0ff;font-size:17px;letter-spacing:20px;animation:star-twinkle 3s steps(2,end) infinite}
+.pixel-rooftop:after{content:"";position:absolute;z-index:0;left:0;right:0;bottom:46px;height:15px;background:#150a2e;border-top:5px solid #b46ef2}
+.pixel-moon{position:absolute;left:50%;top:35px;width:70px;height:70px;background:#ffd5c7;border-radius:50%;box-shadow:0 0 30px #e7a6ff,0 0 80px #c16aff88;transform:translateX(-50%);z-index:0}
+.pixel-city{position:absolute;left:0;right:0;bottom:60px;height:145px;pointer-events:none}
+.city-back{opacity:.6;background:repeating-linear-gradient(90deg,transparent 0 16px,#653a92 16px 62px,transparent 62px 68px,#573083 68px 102px,transparent 102px 112px);clip-path:polygon(0 40%,6% 40%,6% 18%,13% 18%,13% 50%,20% 50%,20% 5%,27% 5%,27% 45%,34% 45%,34% 20%,42% 20%,42% 55%,50% 55%,50% 8%,59% 8%,59% 45%,68% 45%,68% 15%,77% 15%,77% 40%,84% 40%,84% 0,92% 0,92% 48%,100% 48%,100% 100%,0 100%)}
+.city-front{bottom:47px;height:95px;background:repeating-linear-gradient(90deg,#25124b 0 26px,#321653 26px 65px,#211044 65px 88px);clip-path:polygon(0 15%,10% 15%,10% 0,18% 0,18% 35%,27% 35%,27% 12%,35% 12%,35% 28%,45% 28%,45% 0,53% 0,53% 40%,61% 40%,61% 12%,70% 12%,70% 25%,80% 25%,80% 0,88% 0,88% 35%,100% 35%,100% 100%,0 100%)}
+.city-front:after{content:"";position:absolute;inset:8px;background-image:radial-gradient(#ffb9f5 2px,transparent 3px);background-size:23px 22px;opacity:.8}
+.pixel-rooftop .pixel-walkers{animation:none!important;left:50%!important;bottom:39px!important;transform:translateX(-50%)!important;z-index:4;gap:clamp(4px,2.4vw,30px);pointer-events:none}
+.pixel-rooftop .pixel-person{width:clamp(30px,5vw,65px);height:93px;animation:pixel-bob 2s steps(2,end) infinite alternate;cursor:pointer;pointer-events:auto;position:relative}
+.pixel-rooftop .pixel-head{width:clamp(27px,3.5vw,42px);height:35px;border-width:4px;border-radius:7px 7px 3px 3px}
+.pixel-rooftop .pixel-head:before{width:calc(100% + 2px);height:12px;top:-10px;left:-5px;border-width:3px}
+.pixel-rooftop .pixel-body{width:clamp(30px,4vw,48px);height:36px;border-width:4px;border-radius:5px}
+.pixel-rooftop .pixel-body:after{content:"♥";font:15px Arial;color:#e6a6ff}
+.pixel-rooftop .pixel-legs{width:36px;height:15px;transform:rotate(90deg)}
+.pixel-rooftop .pixel-legs:before,.pixel-rooftop .pixel-legs:after{animation:none}
+.rooftop-ledge{position:absolute;bottom:20px;left:0;right:0;height:29px;z-index:3;background:repeating-linear-gradient(90deg,#29113f 0 42px,#452063 42px 46px);border-top:5px solid #e5a1ff;border-bottom:5px solid #100826}
+.rooftop-message{position:absolute;bottom:2px;left:0;right:0;z-index:5;color:#ffcefa;text-align:center;font-size:8px;letter-spacing:1px}
+.pixel-cat{position:absolute;bottom:44px;z-index:6;background:none!important;border:0!important;box-shadow:none!important;font-size:37px!important;filter:drop-shadow(2px 3px #28113d);padding:0!important;animation:cat-bounce 3s ease-in-out infinite}
+.cat-left{left:11%}.cat-right{right:11%;animation-delay:1s}
+.pixel-plant{position:absolute;bottom:40px;z-index:5;width:42px;height:75px;border-bottom:20px solid #54225e}
+.plant-left{left:2%}.plant-right{right:2%}
+.pixel-plant:before{content:"";position:absolute;bottom:0;left:19px;width:5px;height:60px;background:#3e9a78}
+.pixel-plant i{position:absolute;display:block;width:24px;height:13px;background:#347f6f;border:3px solid #1a3e46;transform:rotate(-35deg);left:0;bottom:25px}
+.pixel-plant i:nth-child(2){left:20px;bottom:42px;transform:rotate(35deg)}
+.pixel-plant i:nth-child(3){left:3px;bottom:54px}
+@keyframes star-twinkle{50%{opacity:.3}}@keyframes cat-bounce{50%{transform:translateY(-6px)}}
+@media(max-width:650px){.pixel-rooftop{height:250px!important}.pixel-rooftop .pixel-person{height:75px}.pixel-rooftop .pixel-head{height:28px}.pixel-rooftop .pixel-body{height:28px}.pixel-rooftop .pixel-walkers{gap:3px}.pixel-cat{font-size:26px!important}.cat-left{left:1%}.cat-right{right:1%}.pixel-plant{transform:scale(.65);transform-origin:bottom}.rooftop-message{font-size:6px}}
+@media(prefers-reduced-motion:reduce){.pixel-rooftop:before,.pixel-cat,.pixel-rooftop .pixel-person{animation:none!important}}
 </style>
 </head>
 <body>
@@ -233,7 +264,7 @@ body{background-color:#130a35!important;background-image:radial-gradient(circle 
   <article id="account"><h2>👤 CONTA ARMY</h2><p id="authState">Carregando…</p><div id="authFields"><input id="nick" maxlength="22" placeholder="Seu nome ARMY (cadastro)" aria-label="Nome ARMY"><input id="email" type="email" placeholder="Seu e-mail" autocomplete="email" aria-label="E-mail"><input id="password" type="password" minlength="6" placeholder="Senha" autocomplete="current-password" aria-label="Senha"><button id="login">ENTRAR</button><button id="signup">CADASTRAR</button></div><button id="logout" hidden>SAIR</button><p id="authError" role="status"></p><p id="myScore">Entre para salvar seus cliques 💜</p></article>
   <article><h2>🏆 RANKING ARMY</h2><ol id="rankingList"><li>Carregando…</li></ol><p>Somente cliques de contas entram no ranking.</p></article>
   <article><h2>💬 CHAT ARMY</h2><div id="chatFeed" class="chat-feed">Entre para conversar 💜</div><form id="chatForm"><input id="chatText" maxlength="240" placeholder="Sua mensagem" aria-label="Mensagem" disabled><button id="sendChat" type="submit" disabled>ENVIAR</button></form><p id="chatStatus" role="status"></p></article>
-  </section><div class="skyline-caption">✦ SAME DREAM · SAME STARS ✦</div><section class="pixel-stage" aria-label="sete bonequinhos em pixel art caminhando juntos">
+  </section><div class="skyline-caption">✦ SAME DREAM · SAME STARS ✦</div><section class="pixel-stage pixel-rooftop" aria-label="Cenário pixel art com sete personagens, gatinhos, plantas e cidade noturna">\n    <div class="pixel-moon" aria-hidden="true"></div><div class="pixel-city city-back" aria-hidden="true"></div><div class="pixel-city city-front" aria-hidden="true"></div><div class="pixel-plant plant-left" aria-hidden="true"><i></i><i></i><i></i></div><div class="pixel-plant plant-right" aria-hidden="true"><i></i><i></i><i></i></div><button type="button" class="pixel-cat cat-left" aria-label="Fazer carinho no gatinho da esquerda">🐈</button><button type="button" class="pixel-cat cat-right" aria-label="Fazer carinho no gatinho da direita">🐱</button>
     <div class="pixel-walkers" aria-hidden="true">
       <span class="pixel-person" style="--hair:#25213f;--shirt:#8b45ff"><i class="pixel-head"></i><i class="pixel-body"></i><i class="pixel-legs"></i></span>
       <span class="pixel-person" style="--hair:#9b5539;--shirt:#f4e7ff"><i class="pixel-head"></i><i class="pixel-body"></i><i class="pixel-legs"></i></span>
@@ -267,6 +298,11 @@ body{background-color:#130a35!important;background-image:radial-gradient(circle 
         });
       },7000);
     });
+  </script>
+  <script>
+    document.querySelectorAll('.pixel-cat').forEach(cat=>cat.addEventListener('click',()=>{
+      const heart=document.createElement('span');heart.className='pop';heart.textContent='💜';const rect=cat.getBoundingClientRect();heart.style.left=(rect.left+rect.width/2)+'px';heart.style.top=rect.top+'px';document.body.appendChild(heart);setTimeout(()=>heart.remove(),1000);
+    }));
   </script>
   <script type="module" src="./news.js"></script>
   <script type="module" src="./club.js"></script>
