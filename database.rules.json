@@ -2,7 +2,7 @@
   "rules": {
     "totalClicks": {
       ".read": true,
-      ".write": "auth != null && data.isNumber() && newData.isNumber() && (newData.val() === data.val() + 1 || newData.val() === data.val() + 10)"
+      ".write": "data.exists() && data.isNumber() && newData.isNumber() && newData.val() >= data.val() && newData.val() <= data.val() + 10"
     },
     "scores": {
       ".read": true,
