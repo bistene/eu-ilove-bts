@@ -105,7 +105,41 @@
   .news-card a:focus-visible,.news-card a:hover{background:#48108b;outline:3px solid #ffc2ef;outline-offset:2px}
   .news-foot{margin:20px 0 0;font-size:.9rem;line-height:1.5}
   @media(max-width:650px){.army-news{margin:20px 12px;padding:15px;box-shadow:5px 5px 0 #8c52ff}}
-.news-live{margin:22px 0 0;padding:14px;border:3px solid #281047;background:#f6edff}.news-live h3{margin:0 0 10px;color:#6124aa}.news-live-status{font-size:.88rem}.news-live-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:14px}.news-live-grid article{background:#fff;border:2px solid #281047;padding:12px}.news-live-grid a{color:#6124aa;font-weight:700;overflow-wrap:anywhere}.news-x{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;margin-top:15px}.news-x>div{background:#fff;border:2px solid #281047;padding:12px;min-width:0}.news-x h4{margin:0 0 9px}.news-x .twitter-timeline{display:block;min-height:90px}.news-x .x-fallback{display:none;margin-top:12px;padding:12px;background:#f5edff;border:2px dashed #8c52ff}.news-x .x-unavailable .x-fallback{display:block}.news-x .x-unavailable .twitter-timeline{display:none}.news-x .x-unavailable{min-height:0}.news-footnote{font-size:.87rem;line-height:1.5}.club-extra-single{grid-template-columns:1fr;max-width:1200px}.club-extra-single .club-panel{width:100%}.club-area{grid-template-columns:repeat(2,minmax(0,1fr))}@media(max-width:650px){.club-area{grid-template-columns:1fr}} </style>
+.news-live{margin:22px 0 0;padding:14px;border:3px solid #281047;background:#f6edff}.news-live h3{margin:0 0 10px;color:#6124aa}.news-live-status{font-size:.88rem}.news-live-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:14px}.news-live-grid article{background:#fff;border:2px solid #281047;padding:12px}.news-live-grid a{color:#6124aa;font-weight:700;overflow-wrap:anywhere}.news-x{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;margin-top:15px}.news-x>div{background:#fff;border:2px solid #281047;padding:12px;min-width:0}.news-x h4{margin:0 0 9px}.news-x .twitter-timeline{display:block;min-height:90px}.news-x .x-fallback{display:none;margin-top:12px;padding:12px;background:#f5edff;border:2px dashed #8c52ff}.news-x .x-unavailable .x-fallback{display:block}.news-x .x-unavailable .twitter-timeline{display:none}.news-x .x-unavailable{min-height:0}.news-footnote{font-size:.87rem;line-height:1.5}.club-extra-single{grid-template-columns:1fr;max-width:1200px}.club-extra-single .club-panel{width:100%}.club-area{grid-template-columns:repeat(2,minmax(0,1fr))}@media(max-width:650px){.club-area{grid-template-columns:1fr}} 
+/* REDESIGN: noite ARMY em janelas pixeladas */
+body{background-color:#130a35!important;background-image:radial-gradient(circle at 10% 12%,#f58aff 1px,transparent 2px),radial-gradient(circle at 80% 34%,#b7a1ff 1px,transparent 2px),linear-gradient(180deg,#100929 0%,#241052 45%,#5a258d 82%,#bd5cc5 100%)!important;background-size:43px 43px,71px 71px,100% 100%!important;color:#f7e9ff!important}
+.layout{max-width:1500px!important;grid-template-columns:minmax(0,1.12fr) minmax(0,1.18fr) minmax(0,1fr)!important;gap:22px!important;align-items:stretch!important;margin:32px auto!important}
+.layout .sticker,.layout .main{background:linear-gradient(160deg,#25114d,#180d38)!important;color:#f7e9ff!important;border:3px solid #bd61ff!important;box-shadow:0 0 0 5px #100827,0 0 20px #8f3cff66,8px 8px 0 #08051c!important;padding:18px!important;text-align:center}
+.layout .main{padding:22px!important}
+.layout h2{color:#f7ddff!important;text-shadow:2px 2px #8037d9;line-height:2.2!important}
+.layout .eyebrow{display:block;background:#48208d!important;border:2px solid #8d47d6;font-size:9px;line-height:2!important}
+.layout .counter{font-size:clamp(2rem,4vw,4.2rem)!important;color:#ffc5ff!important;text-shadow:0 0 14px #ed68ff,4px 4px #8538d9;margin:20px 0!important}
+.layout .label,.layout .status,.layout .connection,.layout p{color:#e9d5ff!important}
+.layout .meter{background:#1c0b3e!important;border:2px solid #ce80ff!important;height:27px}
+.layout .fill{background:repeating-linear-gradient(90deg,#e86dff 0 14px,#a453ff 14px 28px)!important}
+.layout #loveBtn{background:linear-gradient(#c94cff,#8127d7)!important;border:3px solid #edb6ff!important;box-shadow:0 4px #40126d,0 0 18px #b54dff55!important;color:white}
+.layout #bonusBtn{background:#a049e9!important;color:white}
+.window-bar{background:#49208d;border:2px solid #a94fff;text-align:left;color:#f6dbff;padding:10px;font-size:10px;line-height:1.7;margin:-6px -6px 17px}
+.window-bar span{float:right;color:#ffb7ff}
+.radio-window{display:flex;flex-direction:column;min-width:0}
+.radio-content{display:flex;flex-direction:column;gap:15px;flex:1}
+.radio-title{font-size:15px;text-align:left;color:#ffc4fa}
+.radio-title small{font-size:10px;color:#d6b9ff}
+.radio-window iframe{width:100%;height:355px;border:0;border-radius:12px;max-width:100%}
+.radio-link{display:block;padding:13px 9px;background:#762cc7;border:2px solid #dd94ff;color:white!important;text-decoration:none;font-size:9px;line-height:1.8}
+.radio-link:hover{background:#a849f5}
+.layout .fake-meme{font-size:4rem;filter:drop-shadow(0 0 10px #cc66ff)}
+.level-pill{background:#c97bff;color:#2a0d51;padding:12px;margin:14px auto;max-width:190px}
+.layout .sticker hr{border:0;border-top:1px solid #8d53bb;margin:22px 0}
+.skyline-caption{text-align:center;color:#ffc7ff;font-size:12px;text-shadow:0 0 10px #d76dff;margin-top:34px}
+.pixel-stage{max-width:1480px;margin:12px auto 25px!important;border-color:#b764ff!important;background:linear-gradient(180deg,#1a0b3e 0%,#4b1d7a 45%,#bb5dc5 74%,#24103e 75%)!important}
+.army-news,.club-area article{background:#24134b!important;color:#f9eaff!important;border-color:#b264ff!important}
+.army-news h2,.club-area h2{color:#f5baff!important}
+.army-news .news-card,.news-live,.news-x>div{color:#251044}
+.club-area article p,.club-area article li{color:#f9eaff}
+@media(max-width:1000px){.layout{grid-template-columns:repeat(2,minmax(0,1fr))!important}.layout .main{grid-column:1 / -1;grid-row:1}.layout .sticker{grid-row:2}}
+@media(max-width:650px){.layout{grid-template-columns:1fr!important;gap:20px!important}.layout .main,.layout .sticker{grid-column:1!important;grid-row:auto!important}.layout .main{grid-row:1!important}.radio-window iframe{height:310px}.layout .counter{font-size:clamp(1.8rem,9vw,3.2rem)!important}}
+</style>
 </head>
 <body>
   <div class="top">💜 EU ILOVE BTS — site oficialmente não oficial <div class="address">💻 o contador é coletivo: cada clique soma para todo mundo!</div></div>
@@ -115,11 +149,7 @@
   </header>
   <div class="ticker"><span>💜 BTS PAVED THE WAY 💜 borahae 💜 7 anjos e 1 fandom surtado 💜 CLIQUE CLique CLIQUE 💜 stream de amor infinito 💜</span></div>
   <main class="layout">
-    <aside class="sticker">
-      <div class="fake-meme">🐱💜🐹</div><h2>EU DEPOIS DE OUVIR BTS</h2>
-      <div class="fake-meme">😭🤏</div><p>“vou ouvir só uma música”</p>
-      <p><b>3 horas depois:</b><br>SEVEN HUNDRED PLAYLISTS</p><span class="badge">100% ARMY</span>
-    </aside>
+    <aside class="sticker radio-window"><div class="window-bar">♫ BTS RADIO · ARIRANG <span>□ ×</span></div><div class="radio-content"><div class="radio-title">💿 ARIRANG <small>· BTS</small></div><iframe title="Álbum ARIRANG do BTS no Spotify" src="https://open.spotify.com/embed/album/3ukkRHDHbN8tNRPKsGZR1h" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe><a class="radio-link" href="https://open.spotify.com/album/3ukkRHDHbN8tNRPKsGZR1h" target="_blank" rel="noopener noreferrer">♫ ÁLBUM COMPLETO NO SPOTIFY ↗</a><p>💜 I PURPLE YOU · BTS FOREVER</p></div></aside>
     <section class="main">
       <span class="eyebrow">⚠️ TESTE CIENTÍFICO REAL (fonte: vozes da minha cabeça)</span>
       <h2>QUANTO TODO MUNDO AMA O BTS???</h2>
@@ -134,10 +164,10 @@
       <p class="caption">*contador coletivo de fãs; não é uma métrica oficial do BTS.</p>
     </section>
     <aside class="sticker">
-      <div class="fake-meme">🫵😎</div><h2>ARMY DETECTADO</h2>
-      <div class="fake-meme">💜</div>
+      <div class="window-bar">♡ ARMY DETECTADO <span>□ ×</span></div><div class="fake-meme">💜</div><h2>ARMY DETECTADO</h2>
+      <div class="level-pill">♡ NÍVEL ARMY ♡</div>
       <p>diagnóstico: amor pelo BTS em níveis completamente normais (confia).</p><hr>
-      <p>💌 lembrete: beba água e faça carinho em si mesmo também!</p>
+      <p>💌 lembrete: beba água e faça carinho em si mesmo também!</p><p>✨ escute BTS hoje · você está indo muito bem!</p>
     </aside>
   </main>
 
@@ -199,13 +229,11 @@
     </div>
     <p class="news-foot">🗓️ <strong>Seleção editorial atualizada em 28/10/2026.</strong> As matérias são links externos e esta lista não se atualiza automaticamente. Para novidades mais recentes, consulte <a href="https://weverse.io/bts/notice" target="_blank" rel="noopener noreferrer">avisos oficiais do BTS</a> e <a href="https://billboard.com.br/artistas/bts/" target="_blank" rel="noopener noreferrer">Billboard Brasil</a>. Informações de redes sociais só devem ser tratadas como confirmadas quando publicadas por perfis oficiais ou verificadas por fontes confiáveis.</p>
   </section>
-  <section class="club-extra club-extra-single">
-    <div class="club-panel"><h2>🎵 BTS RADIO · ARIRANG</h2><iframe title="BTS no Spotify" src="https://open.spotify.com/embed/album/3ukkRHDHbN8tNRPKsGZR1h" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe><p>Álbum ARIRANG no Spotify 💜</p></div>
-  </section><section class="club-area">
+  <section class="club-area">
   <article id="account"><h2>👤 CONTA ARMY</h2><p id="authState">Carregando…</p><div id="authFields"><input id="nick" maxlength="22" placeholder="Seu nome ARMY (cadastro)" aria-label="Nome ARMY"><input id="email" type="email" placeholder="Seu e-mail" autocomplete="email" aria-label="E-mail"><input id="password" type="password" minlength="6" placeholder="Senha" autocomplete="current-password" aria-label="Senha"><button id="login">ENTRAR</button><button id="signup">CADASTRAR</button></div><button id="logout" hidden>SAIR</button><p id="authError" role="status"></p><p id="myScore">Entre para salvar seus cliques 💜</p></article>
   <article><h2>🏆 RANKING ARMY</h2><ol id="rankingList"><li>Carregando…</li></ol><p>Somente cliques de contas entram no ranking.</p></article>
   <article><h2>💬 CHAT ARMY</h2><div id="chatFeed" class="chat-feed">Entre para conversar 💜</div><form id="chatForm"><input id="chatText" maxlength="240" placeholder="Sua mensagem" aria-label="Mensagem" disabled><button id="sendChat" type="submit" disabled>ENVIAR</button></form><p id="chatStatus" role="status"></p></article>
-  </section><section class="pixel-stage" aria-label="sete bonequinhos em pixel art caminhando juntos">
+  </section><div class="skyline-caption">✦ SAME DREAM · SAME STARS ✦</div><section class="pixel-stage" aria-label="sete bonequinhos em pixel art caminhando juntos">
     <div class="pixel-walkers" aria-hidden="true">
       <span class="pixel-person" style="--hair:#25213f;--shirt:#8b45ff"><i class="pixel-head"></i><i class="pixel-body"></i><i class="pixel-legs"></i></span>
       <span class="pixel-person" style="--hair:#9b5539;--shirt:#f4e7ff"><i class="pixel-head"></i><i class="pixel-body"></i><i class="pixel-legs"></i></span>
