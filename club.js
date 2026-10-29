@@ -1,13 +1,8 @@
 import {initializeApp} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
-import {getDatabase,ref,onValue,query,orderByChild,limitToLast,push,serverTimestamp,set} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
-import {getFunctions,httpsCallable} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-functions.js";
-import {initializeAppCheck,ReCaptchaV3Provider} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app-check.js";
+import {getDatabase,ref,onValue,runTransaction,query,orderByChild,limitToLast,push,serverTimestamp,set} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
 import {getAuth,onAuthStateChanged,signInAnonymously,createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 const config={apiKey:"AIzaSyB9KkOfv8t5IcKo4fibFkO5jhyVa1zpAOo",authDomain:"eu-ilove-bts.firebaseapp.com",databaseURL:"https://eu-ilove-bts-default-rtdb.firebaseio.com",projectId:"eu-ilove-bts",storageBucket:"eu-ilove-bts.firebasestorage.app",messagingSenderId:"1075259955753",appId:"1:1075259955753:web:97fa18f8b0bfca2fdb1a38"};
-const app=initializeApp(config),db=getDatabase(app),auth=getAuth(app),functions=getFunctions(app,"us-central1"),registerLove=httpsCallable(functions,"registerLove"),$=id=>document.getElementById(id);
-// Configure a site key in Firebase App Check before deploying this protected endpoint.
-const appCheckSiteKey="";
-if(appCheckSiteKey)initializeAppCheck(app,{provider:new ReCaptchaV3Provider(appCheckSiteKey),isTokenAutoRefreshEnabled:true});
+const app=initializeApp(config),db=getDatabase(app),auth=getAuth(app),$=id=>document.getElementById(id);
 let user=null,connected=false,busy=false,last=0,lastChat=0,unsubScore=null,unsubChat=null,authReady=false;
 const member=()=>user&&!user.isAnonymous;
 const name=()=>($('nick').value.trim()||user?.email?.split('@')[0]||'ARMY').replace(/[<>]/g,'').slice(0,22);
@@ -18,16 +13,22 @@ onValue(ref(db,'totalClicks'),snap=>{connected=typeof snap.val()==='number';if(c
 async function click(amount,event){
   if(!connected||busy||!authReady||Date.now()-last<1200)return;
   if(!auth.currentUser){note('connection','Aguarde a autenticação de visitante 💜');return;}
-  if(!appCheckSiteKey){note('connection','A proteção App Check ainda precisa ser configurada.');return;}
   last=Date.now();busy=true;buttons();
   try{
-    await registerLove({amount,name:name()});
+    const result=await runTransaction(ref(db,'totalClicks'),n=>typeof n==='number'?n+amount:undefined,{applyLocally:false});
+    if(!result.committed)throw Error('Clique não confirmado');
+    if(member()){
+      try{
+        await runTransaction(ref(db,'scores/'+user.uid),old=>{
+          if(old===null)return {name:name(),clicks:amount};
+          if(typeof old.clicks!=='number')return;
+          return {name:old.name,clicks:old.clicks+amount};
+        },{applyLocally:false});
+      }catch(error){console.error(error);note('connection','Clique global salvo, mas pontuação individual não atualizada');}
+    }
     pop(event.clientX||innerWidth/2,event.clientY||innerHeight/2);
-    note('connection','💜 Clique registrado com segurança!');
-  }catch(err){
-    console.error(err);
-    note('connection',err.code==='functions/resource-exhausted'?'Espere um instante antes do próximo clique 💜':'Não foi possível registrar. Confira Function e App Check.');
-  }finally{busy=false;buttons();}
+  }catch(error){console.error(error);note('connection','Clique recusado. Confira as regras do Firebase.')}
+  finally{busy=false;buttons();}
 }
 $('loveBtn').onclick=e=>click(1,e);$('bonusBtn').onclick=e=>click(10,e);
 onAuthStateChanged(auth,async current=>{authReady=true;user=current;const logged=member();$('authFields').hidden=logged;$('logout').hidden=!logged;$('chatText').disabled=$('sendChat').disabled=!logged;note('authState',logged?'💜 Conectado: '+current.email:'Visitante — cliques liberados 💜');if(unsubScore)unsubScore();if(unsubChat)unsubChat();if(logged){unsubScore=onValue(ref(db,'scores/'+current.uid),snap=>{const n=snap.val()?.clicks||0;note('myScore','💜 Seus cliques: '+n+' • Nível '+(Math.floor(Math.sqrt(n/25))+1))});unsubChat=onValue(query(ref(db,'chat'),orderByChild('createdAt'),limitToLast(40)),snap=>{const feed=$('chatFeed');feed.replaceChildren();snap.forEach(child=>{const m=child.val();if(typeof m?.text!=='string')return;const p=document.createElement('p');const b=document.createElement('strong');b.textContent=String(m.name||'ARMY').slice(0,22)+': ';p.append(b,document.createTextNode(m.text));feed.append(p)});feed.scrollTop=feed.scrollHeight},()=>note('chatFeed','Chat indisponível: confira regras'))}else{note('myScore','Entre para guardar cliques no ranking');note('chatFeed','Faça login para conversar 💜');if(!current)signInAnonymously(auth).catch(()=>note('authState','Ative login anônimo no Firebase'))}});
