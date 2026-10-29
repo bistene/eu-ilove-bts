@@ -26,3 +26,10 @@ No chat, valide no servidor que `auth.uid` corresponde a `uid`, limite tamanho e
 - Confirme que o contador global original não foi zerado.
 
 **Não faça merge para main enquanto backend, regras e testes não estiverem concluídos.**
+
+
+## Regras propostas (não publicadas)
+O arquivo `database.rules.proposed.json` é uma proposta para revisão, **não foi aplicado ao Firebase**. Não substitua as regras do banco sem antes exportar as atuais e testar no Emulator Suite: a troca pode interromper o contador já publicado. O arquivo limita a forma dos incrementos, mas **não impede automação nem manipulação por clientes maliciosos**. A solução definitiva deve validar os cliques no servidor.
+
+## Dependências e limitações
+O projeto usa Firebase Auth anônimo para visitantes; sem ativar o provedor Anonymous, o contador ficará indisponível para esses visitantes quando as regras exigirem autenticação. O chat precisa de moderação e proteção contra spam no servidor. Ainda não houve teste automatizado ou deploy do Firebase. O PR permanece rascunho.
