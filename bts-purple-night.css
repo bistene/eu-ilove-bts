@@ -1,0 +1,32 @@
+/* BTS Purple Night — visual layer, preserves existing JS and Firebase */
+body{background:#140a31!important;color:#f8e4ff!important}
+.top,.banner,.ticker{display:none!important}
+.illustrated-hero{isolation:isolate;position:relative;overflow:hidden;padding:72px 24px 0!important;background:radial-gradient(ellipse at 50% 84%,#e86eb4 0%,#843a9c 20%,transparent 48%),linear-gradient(180deg,#190c40,#291257 55%,#a34baf 88%,#251047)!important}
+.illustrated-hero:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(circle,#ffb6ff 1px,transparent 2px),radial-gradient(circle,#e5a3ff 1px,transparent 2px);background-size:110px 93px,163px 139px;background-position:22px 18px,70px 53px}
+.illustrated-hero .layout{position:relative;z-index:3;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1.24fr) minmax(0,1fr)!important;gap:18px!important;max-width:1480px!important;padding:0!important;margin:0 auto!important;align-items:start!important}
+.illustrated-hero .layout>.main,.illustrated-hero .layout>.sticker{min-width:0;min-height:480px!important;padding:0 0 20px!important;transform:none!important;background:linear-gradient(180deg,#170d31,#291441)!important;color:#f5e0ff!important;border:4px solid #a857e2!important;border-radius:8px!important;box-shadow:0 0 0 3px #120626,0 0 0 5px #080311,0 14px 35px #080311a0!important;overflow:hidden}
+.illustrated-hero .layout>.main{min-height:540px!important;margin-top:-30px!important;grid-column:2!important;grid-row:1!important}
+.illustrated-hero .layout>.sticker:first-child{grid-column:1!important;grid-row:1!important}
+.illustrated-hero .layout>.sticker:last-child{grid-column:3!important;grid-row:1!important}
+.illustrated-hero .window-bar{background:linear-gradient(#5523a5,#36166e)!important;color:white!important;border-bottom:3px solid #a75cdd!important;min-height:50px;display:flex;align-items:center;justify-content:space-between;padding:10px!important;font-size:clamp(8px,.85vw,12px)!important;line-height:1.7!important}
+.illustrated-hero .radio-content{padding:16px!important}
+.illustrated-hero .radio-title{color:#fff!important;text-align:left!important;font-size:15px!important}
+.illustrated-hero .radio-window iframe{display:block;width:100%!important;height:310px!important;border:0!important;border-radius:4px!important}
+.illustrated-hero .radio-link{display:block!important;background:linear-gradient(#b94cf5,#7822e7)!important;color:white!important;border:2px solid #dfa1ff!important;border-radius:4px!important;padding:14px 8px!important;text-align:center!important;text-decoration:none!important;font-size:9px!important;line-height:1.7!important}
+.illustrated-hero .main .eyebrow{display:block!important;border-radius:0!important;background:linear-gradient(#5725aa,#341567)!important;border-bottom:3px solid #a85ce4!important;color:white!important;padding:17px 12px!important;font-size:clamp(9px,1vw,13px)!important;line-height:1.8!important}
+.illustrated-hero .main h2{color:#fff!important;font-size:clamp(10px,1.1vw,14px)!important;line-height:1.9!important;margin:20px 12px!important}
+.illustrated-hero .main .counter{font-size:clamp(32px,4.4vw,65px)!important;line-height:1.4!important;color:#ffd0fc!important;text-shadow:0 0 18px #ec49df!important;margin:12px 10px!important}
+.illustrated-hero .main .label{color:#f6dfff!important;font-size:10px!important}
+.illustrated-hero .main .meter{margin:20px 24px!important;background:#120822!important;border:2px solid #e5a4fa!important;border-radius:3px!important;height:24px!important}
+.illustrated-hero .main .fill{background:linear-gradient(90deg,#9e39d7,#e39bfa)!important}
+.illustrated-hero .main #loveBtn,.illustrated-hero .main #bonusBtn{background:linear-gradient(#b84cf5,#7921e5)!important;color:#fff!important;border:2px solid #e6a7ff!important;border-radius:4px!important;box-shadow:inset 0 2px #f2c3ff,0 3px #3d1461!important}
+.illustrated-hero .main #loveBtn{width:calc(100% - 48px)!important;margin:0 24px 15px!important;font-size:clamp(10px,1.3vw,16px)!important}
+.illustrated-hero .main .connection,.illustrated-hero .main p{color:#e7d0f7!important}
+.illustrated-hero .army-heart{font-size:90px!important;filter:drop-shadow(0 0 20px #cf54ee)}
+.illustrated-hero .level-pill{display:inline-block;background:#d89cf5!important;color:#361250!important;border-radius:4px!important;padding:8px 12px!important}
+.illustrated-hero .layout>.sticker:last-child p{color:#f4ddff!important;line-height:2.1!important}
+.illustrated-hero .pixel-rooftop{z-index:1!important;position:relative!important;margin:-10px auto 0!important;background:transparent!important;border:0!important;box-shadow:none!important}
+.illustrated-hero .pixel-rooftop .pixel-walkers{bottom:55px!important}
+.illustrated-hero .scene-controls{position:relative;z-index:2}
+@media(max-width:980px){.illustrated-hero .layout{grid-template-columns:repeat(2,minmax(0,1fr))!important}.illustrated-hero .layout>.main{grid-column:1/-1!important;grid-row:1!important;margin-top:0!important}.illustrated-hero .layout>.sticker:first-child{grid-column:1!important;grid-row:2!important}.illustrated-hero .layout>.sticker:last-child{grid-column:2!important;grid-row:2!important}}
+@media(max-width:620px){.illustrated-hero{padding:60px 12px 0!important}.illustrated-hero .layout{grid-template-columns:minmax(0,1fr)!important}.illustrated-hero .layout>.main,.illustrated-hero .layout>.sticker:first-child,.illustrated-hero .layout>.sticker:last-child{grid-column:1!important;min-height:0!important}.illustrated-hero .layout>.main{grid-row:1!important}.illustrated-hero .layout>.sticker:first-child{grid-row:2!important}.illustrated-hero .layout>.sticker:last-child{grid-row:3!important}.illustrated-hero .main .counter{font-size:clamp(28px,8vw,48px)!important}}
