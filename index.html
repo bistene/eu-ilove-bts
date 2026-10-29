@@ -272,6 +272,20 @@ body{background-color:#130a35!important;background-image:radial-gradient(circle 
 @keyframes scene-breathe{0%{translate:0 0}100%{translate:0 -4px}}
 @media(max-width:700px){.pixel-rooftop{height:335px!important;min-height:335px!important;border-radius:16px!important}.pixel-rooftop .scene-heading{top:22px!important}.scene-heading span{font-size:12px!important}.scene-heading small{font-size:9px!important;letter-spacing:1px!important}.pixel-rooftop .pixel-moon{top:100px!important;width:60px!important;height:60px!important}.pixel-rooftop .pixel-walkers{bottom:79px!important;width:92%;gap:0!important}.pixel-rooftop .pixel-person{width:13%!important;height:88px!important}.pixel-rooftop .pixel-head{width:27px!important;height:30px!important}.pixel-rooftop .pixel-body{width:30px!important;height:32px!important}.pixel-rooftop .pixel-legs{width:26px!important}.pixel-rooftop .pixel-cat{transform:scale(.75);bottom:92px!important}.pixel-rooftop .cat-left{left:0!important}.pixel-rooftop .cat-right{right:0!important}.pixel-rooftop .pixel-plant{transform:scale(.8);bottom:96px!important}.pixel-rooftop .rooftop-ledge{bottom:59px!important}.pixel-rooftop .rooftop-message{bottom:18px!important;font-size:6px!important;letter-spacing:0!important}.pixel-rooftop:after{height:90px!important}.skyline-caption{font-size:9px!important;letter-spacing:1px!important}}
 @media(prefers-reduced-motion:reduce){.pixel-rooftop .pixel-person{animation:none!important}}
+
+/* Sprite scene: personagens, gatos e plantas sao arquivos SVG, nao desenhos CSS */
+.sprite-scene .pixel-walkers{display:flex!important;align-items:end!important;justify-content:center!important}
+.sprite-scene .pixel-person{appearance:none;display:block!important;position:relative;width:clamp(52px,8vw,108px)!important;height:clamp(110px,14vw,162px)!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;cursor:pointer;filter:drop-shadow(0 8px 5px #170b2d88);animation:scene-breathe 3s ease-in-out infinite alternate!important}
+.sprite-scene .pixel-person img{width:100%;height:100%;object-fit:contain;display:block}
+.sprite-scene .pixel-person:hover{filter:drop-shadow(0 0 14px #ffcdfa)}
+.sprite-scene .pixel-cat{width:clamp(55px,7vw,96px)!important;height:clamp(80px,9vw,120px)!important;display:block!important;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important}
+.sprite-scene .pixel-cat img{display:block;width:100%;height:100%;object-fit:contain}
+.sprite-scene .sprite-plant{position:absolute;z-index:6;bottom:98px;width:clamp(58px,7vw,96px);height:clamp(95px,12vw,145px);object-fit:contain;filter:drop-shadow(0 5px 4px #1a0b31)}
+.sprite-scene .sprite-plant.plant-left{left:2%}.sprite-scene .sprite-plant.plant-right{right:2%;transform:scaleX(-1)}
+.sprite-scene .pixel-person.scene-wave{animation:scene-wave .6s steps(4,end) 1!important}
+.sprite-scene .pixel-cat.cat-happy img{animation:cat-happy .6s steps(3,end) 1}
+@media(max-width:700px){.sprite-scene .pixel-person{width:13vw!important;height:100px!important;min-width:0!important}.sprite-scene .sprite-plant{width:44px;height:80px;bottom:88px}.sprite-scene .pixel-cat{width:55px!important;height:70px!important}}
+@media(prefers-reduced-motion:reduce){.sprite-scene .pixel-person,.sprite-scene .pixel-cat img{animation:none!important}}
 </style>
 </head>
 <body>
@@ -366,20 +380,23 @@ body{background-color:#130a35!important;background-image:radial-gradient(circle 
   <article id="account"><h2>👤 CONTA ARMY</h2><p id="authState">Carregando…</p><div id="authFields"><input id="nick" maxlength="22" placeholder="Seu nome ARMY (cadastro)" aria-label="Nome ARMY"><input id="email" type="email" placeholder="Seu e-mail" autocomplete="email" aria-label="E-mail"><input id="password" type="password" minlength="6" placeholder="Senha" autocomplete="current-password" aria-label="Senha"><button id="login">ENTRAR</button><button id="signup">CADASTRAR</button></div><button id="logout" hidden>SAIR</button><p id="authError" role="status"></p><p id="myScore">Entre para salvar seus cliques 💜</p></article>
   <article><h2>🏆 RANKING ARMY</h2><ol id="rankingList"><li>Carregando…</li></ol><p>Somente cliques de contas entram no ranking.</p></article>
   <article><h2>💬 CHAT ARMY</h2><div id="chatFeed" class="chat-feed">Entre para conversar 💜</div><form id="chatForm"><input id="chatText" maxlength="240" placeholder="Sua mensagem" aria-label="Mensagem" disabled><button id="sendChat" type="submit" disabled>ENVIAR</button></form><p id="chatStatus" role="status"></p></article>
-  </section><div class="skyline-caption">OUR LITTLE PURPLE UNIVERSE <span>✦</span></div><section class="pixel-stage pixel-rooftop" aria-label="Cenário pixel art com sete personagens, gatinhos, plantas e cidade noturna">
-    <div class="scene-heading" aria-hidden="true"><span>THE MAGIC SHOP</span><small>where ARMY hearts meet ♡</small></div><div class="pixel-moon" aria-hidden="true"></div><div class="pixel-city city-back" aria-hidden="true"></div><div class="pixel-city city-front" aria-hidden="true"></div><div class="pixel-plant plant-left" aria-hidden="true"><i></i><i></i><i></i></div><div class="pixel-plant plant-right" aria-hidden="true"><i></i><i></i><i></i></div><button type="button" class="pixel-cat cat-left" aria-label="Fazer carinho no gatinho da esquerda"><span class="cat-sprite" aria-hidden="true"><i class="cat-ear ear-left"></i><i class="cat-ear ear-right"></i><i class="cat-face"></i><i class="cat-body"></i><i class="cat-tail"></i></span></button><button type="button" class="pixel-cat cat-right" aria-label="Fazer carinho no gatinho da direita"><span class="cat-sprite ginger" aria-hidden="true"><i class="cat-ear ear-left"></i><i class="cat-ear ear-right"></i><i class="cat-face"></i><i class="cat-body"></i><i class="cat-tail"></i></span></button>
-    <div class="pixel-walkers" aria-label="Sete personagens interativos">
-      <span class="pixel-person" style="--hair:#25213f;--shirt:#8b45ff;--pose:1" title="Personagem 1"><i class="pixel-head"><i class="pixel-fringe"></i><i class="pixel-eyes"></i><i class="pixel-blush"></i></i><i class="pixel-body"><i class="pixel-sleeves"></i></i><i class="pixel-legs"></i></span>
-      <span class="pixel-person" style="--hair:#9b5539;--shirt:#f4e7ff;--pose:2" title="Personagem 2"><i class="pixel-head"><i class="pixel-fringe"></i><i class="pixel-eyes"></i><i class="pixel-blush"></i></i><i class="pixel-body"><i class="pixel-sleeves"></i></i><i class="pixel-legs"></i></span>
-      <span class="pixel-person" style="--hair:#17172f;--shirt:#25213f;--pose:3" title="Personagem 3"><i class="pixel-head"><i class="pixel-fringe"></i><i class="pixel-eyes"></i><i class="pixel-blush"></i></i><i class="pixel-body"><i class="pixel-sleeves"></i></i><i class="pixel-legs"></i></span>
-      <span class="pixel-person" style="--hair:#f3d18b;--shirt:#f4e7ff;--pose:4" title="Personagem 4"><i class="pixel-head"><i class="pixel-fringe"></i><i class="pixel-eyes"></i><i class="pixel-blush"></i></i><i class="pixel-body"><i class="pixel-sleeves"></i></i><i class="pixel-legs"></i></span>
-      <span class="pixel-person" style="--hair:#9298ae;--shirt:#202d71;--pose:5" title="Personagem 5"><i class="pixel-head"><i class="pixel-fringe"></i><i class="pixel-eyes"></i><i class="pixel-blush"></i></i><i class="pixel-body"><i class="pixel-sleeves"></i></i><i class="pixel-legs"></i></span>
-      <span class="pixel-person" style="--hair:#a85c37;--shirt:#2476e8;--pose:6" title="Personagem 6"><i class="pixel-head"><i class="pixel-fringe"></i><i class="pixel-eyes"></i><i class="pixel-blush"></i></i><i class="pixel-body"><i class="pixel-sleeves"></i></i><i class="pixel-legs"></i></span>
-      <span class="pixel-person" style="--hair:#24203d;--shirt:#25213f;--pose:7" title="Personagem 7"><i class="pixel-head"><i class="pixel-fringe"></i><i class="pixel-eyes"></i><i class="pixel-blush"></i></i><i class="pixel-body"><i class="pixel-sleeves"></i></i><i class="pixel-legs"></i></span>
-    </div>
-    <div class="rooftop-ledge" aria-hidden="true"></div>
-    <div class="rooftop-message" aria-hidden="true">BTS ♡ ARMY FOREVER · SAME DREAM, SAME STARS</div>
-  </section>
+  </section><div class="skyline-caption">OUR LITTLE PURPLE UNIVERSE <span>✦</span></div>
+<section class="pixel-stage pixel-rooftop sprite-scene" aria-label="Terraço ilustrado com sete personagens, dois gatos, plantas e cidade noturna">
+<div class="scene-heading" aria-hidden="true"><span>THE MAGIC SHOP</span><small>where ARMY hearts meet ♡</small></div>
+<div class="pixel-moon" aria-hidden="true"></div><div class="pixel-city city-back" aria-hidden="true"></div><div class="pixel-city city-front" aria-hidden="true"></div>
+<img class="sprite-plant plant-left" src="./assets/sprites/plant.svg" alt="" loading="lazy">
+<img class="sprite-plant plant-right" src="./assets/sprites/plant.svg" alt="" loading="lazy">
+<button type="button" class="pixel-cat cat-left" aria-label="Fazer carinho no gatinho da esquerda"><img src="./assets/sprites/cat-lilac.svg" alt="" loading="lazy"></button>
+<button type="button" class="pixel-cat cat-right" aria-label="Fazer carinho no gatinho da direita"><img src="./assets/sprites/cat-peach.svg" alt="" loading="lazy"></button>
+<div class="pixel-walkers" aria-label="Sete personagens interativos"><button class="pixel-person" type="button" aria-label="Personagem 1: enviar carinho"><img src="./assets/sprites/army-1.svg" alt="" loading="lazy"></button>
+<button class="pixel-person" type="button" aria-label="Personagem 2: enviar carinho"><img src="./assets/sprites/army-2.svg" alt="" loading="lazy"></button>
+<button class="pixel-person" type="button" aria-label="Personagem 3: enviar carinho"><img src="./assets/sprites/army-3.svg" alt="" loading="lazy"></button>
+<button class="pixel-person" type="button" aria-label="Personagem 4: enviar carinho"><img src="./assets/sprites/army-4.svg" alt="" loading="lazy"></button>
+<button class="pixel-person" type="button" aria-label="Personagem 5: enviar carinho"><img src="./assets/sprites/army-5.svg" alt="" loading="lazy"></button>
+<button class="pixel-person" type="button" aria-label="Personagem 6: enviar carinho"><img src="./assets/sprites/army-6.svg" alt="" loading="lazy"></button>
+<button class="pixel-person" type="button" aria-label="Personagem 7: enviar carinho"><img src="./assets/sprites/army-7.svg" alt="" loading="lazy"></button></div>
+<div class="rooftop-ledge" aria-hidden="true"></div><div class="rooftop-message" aria-hidden="true">BTS ♡ ARMY FOREVER · SAME DREAM, SAME STARS</div>
+</section>
   <div class="scene-controls" aria-label="Controles do cenário"><button id="sceneMotion" type="button" aria-pressed="true">⏸ PAUSAR ANIMAÇÕES</button><button id="sceneTheme" type="button" aria-pressed="false">☀ MODO AMANHECER</button><p id="sceneStatus" role="status" aria-live="polite">Toque nos personagens e gatinhos para interagir! 💜</p></div>
   <div class="footer">
     <div class="fake-meme">💜 🐨 🐹 🐱 🐿️ 🐥 🐻 🐰 💜</div>
