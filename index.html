@@ -105,7 +105,7 @@
   .news-card a:focus-visible,.news-card a:hover{background:#48108b;outline:3px solid #ffc2ef;outline-offset:2px}
   .news-foot{margin:20px 0 0;font-size:.9rem;line-height:1.5}
   @media(max-width:650px){.army-news{margin:20px 12px;padding:15px;box-shadow:5px 5px 0 #8c52ff}}
-</style>
+.news-live{margin:22px 0 0;padding:14px;border:3px solid #281047;background:#f6edff}.news-live h3{margin:0 0 10px;color:#6124aa}.news-live-status{font-size:.88rem}.news-live-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:14px}.news-live-grid article{background:#fff;border:2px solid #281047;padding:12px}.news-live-grid a{color:#6124aa;font-weight:700;overflow-wrap:anywhere}.news-x{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;margin-top:15px}.news-x>div{background:#fff;border:2px solid #281047;padding:12px;min-width:0}.news-x h4{margin:0 0 9px}.news-x .twitter-timeline{display:block;min-height:90px}.news-footnote{font-size:.87rem;line-height:1.5}</style>
 </head>
 <body>
   <div class="top">💜 EU ILOVE BTS — site oficialmente não oficial <div class="address">💻 o contador é coletivo: cada clique soma para todo mundo!</div></div>
@@ -182,6 +182,21 @@
         <a href="https://weverse.io/bts/media" target="_blank" rel="noopener noreferrer">Abrir Weverse ↗</a>
       </article>
     </div>
+    <div class="news-live" aria-labelledby="news-live-title">
+      <h3 id="news-live-title">⚡ Manchetes recentes · atualização automática</h3>
+      <p id="newsLiveStatus" class="news-live-status" role="status">Buscando notícias verificadas…</p>
+      <div id="newsLiveGrid" class="news-live-grid" aria-live="polite"></div>
+      <p class="news-footnote">Atualização programada a cada 30 minutos pelo GitHub Actions, sujeita a atrasos do serviço e ao deploy. Notícias não são atualizadas segundo a segundo.</p>
+    </div>
+    <div class="news-live" aria-labelledby="news-x-title">
+      <h3 id="news-x-title">🐦 BTS no X (Twitter) · posts oficiais</h3>
+      <p class="news-footnote">Publicações carregadas diretamente do X quando o navegador e a plataforma permitem. Conteúdo e frequência dependem do X.</p>
+      <div class="news-x">
+        <div><h4>💜 BTS · @BTS_twt</h4><a class="twitter-timeline" data-height="440" data-theme="light" href="https://twitter.com/BTS_twt">Ver posts oficiais de @BTS_twt no X</a></div>
+        <div><h4>📢 BIGHIT MUSIC · @BIGHIT_MUSIC</h4><a class="twitter-timeline" data-height="440" data-theme="light" href="https://twitter.com/BIGHIT_MUSIC">Ver comunicados da BIGHIT MUSIC no X</a></div>
+      </div>
+      <p class="news-footnote">Se os posts não aparecerem, use os links para abrir os perfis oficiais.</p>
+    </div>
     <p class="news-foot">🗓️ <strong>Seleção editorial atualizada em 28/10/2026.</strong> As matérias são links externos e esta lista não se atualiza automaticamente. Para novidades mais recentes, consulte <a href="https://weverse.io/bts/notice" target="_blank" rel="noopener noreferrer">avisos oficiais do BTS</a> e <a href="https://billboard.com.br/artistas/bts/" target="_blank" rel="noopener noreferrer">Billboard Brasil</a>. Informações de redes sociais só devem ser tratadas como confirmadas quando publicadas por perfis oficiais ou verificadas por fontes confiáveis.</p>
   </section>
   <section class="club-extra">
@@ -217,6 +232,8 @@
     Nunca publique credenciais de conta de serviço. A configuração do app web não é uma chave secreta,
     mas as regras do banco são essenciais para limitar abuso.
   -->
+  <script src="https://platform.twitter.com/widgets.js" async charset="utf-8"></script>
+  <script type="module" src="./news.js"></script>
   <script type="module" src="./club.js"></script>
 </body>
 </html>
