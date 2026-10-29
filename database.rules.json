@@ -1,0 +1,31 @@
+{
+  "rules": {
+    "totalClicks": {
+      ".read": true,
+      ".write": "data.exists() && data.isNumber() && newData.isNumber() && newData.val() >= data.val() && newData.val() <= data.val() + 10"
+    },
+    "scores": {
+      ".read": true,
+      ".write": false,
+      ".indexOn": [
+        "clicks"
+      ],
+      "$uid": {
+        ".write": "auth != null && auth.uid === $uid && auth.token.firebase.sign_in_provider !== 'anonymous' && newData.hasChildren(['name','clicks']) && newData.child('name').isString() && newData.child('name').val().length >= 2 && newData.child('name').val().length <= 22 && newData.child('clicks').isNumber() && ((!data.exists() && (newData.child('clicks').val() === 0 || newData.child('clicks').val() === 1 || newData.child('clicks').val() === 10)) || (data.exists() && newData.child('name').val() === data.child('name').val() && (newData.child('clicks').val() === data.child('clicks').val() + 1 || newData.child('clicks').val() === data.child('clicks').val() + 10)))"
+      }
+    },
+    "chat": {
+      ".read": "auth != null && auth.token.firebase.sign_in_provider !== 'anonymous'",
+      ".indexOn": [
+        "createdAt"
+      ],
+      "$messageId": {
+        ".write": "auth != null && auth.token.firebase.sign_in_provider !== 'anonymous' && !data.exists() && newData.hasChildren(['uid', 'name', 'text', 'createdAt']) && newData.child('uid').val() === auth.uid && newData.child('name').isString() && newData.child('name').val().length >= 2 && newData.child('name').val().length <= 22 && newData.child('text').isString() && newData.child('text').val().length >= 1 && newData.child('text').val().length <= 240 && newData.child('createdAt').val() === now"
+      }
+    },
+    "$other": {
+      ".read": false,
+      ".write": false
+    }
+  }
+}
