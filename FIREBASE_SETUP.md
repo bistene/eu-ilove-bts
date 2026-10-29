@@ -33,3 +33,18 @@ O arquivo `database.rules.proposed.json` é uma proposta para revisão, **não f
 
 ## Dependências e limitações
 O projeto usa Firebase Auth anônimo para visitantes; sem ativar o provedor Anonymous, o contador ficará indisponível para esses visitantes quando as regras exigirem autenticação. O chat precisa de moderação e proteção contra spam no servidor. Ainda não houve teste automatizado ou deploy do Firebase. O PR permanece rascunho.
+
+## Backend de cliques (nova etapa)
+A branch agora contém `functions/index.js`, `functions/package.json`, `firebase.json` e `database.rules.json`. O cliente chama a Cloud Function `registerLove` na região `us-central1` e **não grava mais cliques diretamente no Realtime Database**.
+
+**Antes de testar:**
+1. Ative Firebase App Check para o app web e configure reCAPTCHA v3. Copie a *site key pública* para `appCheckSiteKey` em `club.js` (atualmente vazia por segurança operacional). Não coloque chave secreta no repositório.
+2. Confirme que o projeto suporta Cloud Functions e faturamento necessário; execute `npm install` dentro de `functions/`.
+3. Faça backup dos dados e regras do Realtime Database e teste em ambiente isolado usando o Emulator Suite.
+4. Valide a transação da raiz: ela preserva o contador existente, mas lê e grava a árvore inteira, portanto **não é adequada para banco grande**. Planeje migrar para uma estrutura de dados transacional dedicada antes de escalar.
+5. Depois de validar o ambiente de teste, implante Functions e regras de forma coordenada. **Não implante somente as regras**: elas bloqueiam os cliques da versão pública atual.
+6. Teste o preview da branch antes de fazer merge.
+
+**Status:** código preparado, não implantado. O site da branch não registrará cliques enquanto a site key App Check estiver vazia. O site público da main continua usando seu comportamento atual.
+
+**Limitações:** App Check e cooldown reduzem abuso, mas não eliminam bots. O chat ainda exige moderação e rate limiting do lado servidor. As regras propostas não substituem auditoria e testes reais.
