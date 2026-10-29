@@ -170,6 +170,34 @@ body{background-color:#130a35!important;background-image:radial-gradient(circle 
 @keyframes star-twinkle{50%{opacity:.3}}@keyframes cat-bounce{50%{transform:translateY(-6px)}}
 @media(max-width:650px){.pixel-rooftop{height:250px!important}.pixel-rooftop .pixel-person{height:75px}.pixel-rooftop .pixel-head{height:28px}.pixel-rooftop .pixel-body{height:28px}.pixel-rooftop .pixel-walkers{gap:3px}.pixel-cat{font-size:26px!important}.cat-left{left:1%}.cat-right{right:1%}.pixel-plant{transform:scale(.65);transform-origin:bottom}.rooftop-message{font-size:6px}}
 @media(prefers-reduced-motion:reduce){.pixel-rooftop:before,.pixel-cat,.pixel-rooftop .pixel-person{animation:none!important}}
+
+/* Sprite pass: cabelos, rostinhos, roupas e gatinhos desenhados em CSS */
+.pixel-rooftop .pixel-person{filter:drop-shadow(0 4px 0 #120726);transition:filter .15s,transform .15s}
+.pixel-rooftop .pixel-person:hover,.pixel-rooftop .pixel-person:focus-visible{filter:drop-shadow(0 0 8px #f5baff) drop-shadow(0 4px 0 #120726);outline:0}
+.pixel-rooftop .pixel-head{background:var(--skin,#f5c5a8)!important;box-shadow:inset -5px 0 #df9e9b;overflow:visible}
+.pixel-rooftop .pixel-person:nth-child(2){--skin:#f2c3aa}.pixel-rooftop .pixel-person:nth-child(3){--skin:#edb79d}.pixel-rooftop .pixel-person:nth-child(5){--skin:#eebba0}
+.pixel-rooftop .pixel-fringe{position:absolute;left:0;top:-4px;width:60%;height:11px;background:var(--hair);box-shadow:7px 4px 0 var(--hair);z-index:4}
+.pixel-rooftop .pixel-eyes{position:absolute;left:22%;top:52%;width:4px;height:4px;background:#2b153c;box-shadow:13px 0 #2b153c;z-index:3}
+.pixel-rooftop .pixel-blush{position:absolute;left:10%;top:70%;width:6px;height:3px;background:#e884a2;box-shadow:21px 0 #e884a2;z-index:3}
+.pixel-rooftop .pixel-body{position:relative;background:var(--shirt)!important;box-shadow:inset -5px 0 #0002}
+.pixel-rooftop .pixel-sleeves{position:absolute;top:3px;left:-10px;width:7px;height:22px;background:var(--shirt);border:2px solid #211047;box-shadow:calc(clamp(30px,4vw,48px) + 2px) 0 var(--shirt)}
+.pixel-rooftop .pixel-person:nth-child(3) .pixel-fringe,.pixel-rooftop .pixel-person:nth-child(6) .pixel-fringe{height:15px}
+.pixel-rooftop .pixel-person:nth-child(4) .pixel-head:before{border-radius:12px 12px 0 0}
+.pixel-rooftop .pixel-person:nth-child(7) .pixel-body:after{content:"7";font:bold 16px Arial;color:#f3d8ff}
+.pixel-rooftop .pixel-person:nth-child(6) .pixel-body:after{content:"✦";color:#ffdcff}
+.pixel-rooftop .pixel-person:nth-child(2) .pixel-body:after{content:"♡";color:#a94df2}
+.pixel-cat{width:65px;height:75px;display:grid;place-items:center;cursor:pointer}
+.cat-sprite{--fur:#f8e9ff;--shadow:#c6a5dd;position:relative;display:block;width:44px;height:61px;filter:drop-shadow(3px 4px 0 #1b0d38)}
+.cat-sprite.ginger{--fur:#f5bd80;--shadow:#d7855d}
+.cat-face{position:absolute;top:8px;left:5px;width:35px;height:31px;background:var(--fur);border:4px solid #291544;border-radius:10px 10px 13px 13px;z-index:2}
+.cat-face:after{content:"";position:absolute;left:7px;top:11px;width:4px;height:5px;background:#291544;box-shadow:12px 0 #291544,6px 8px #e58baa}
+.cat-ear{position:absolute;top:0;width:17px;height:20px;background:var(--fur);border:4px solid #291544;transform:rotate(-17deg);z-index:1}
+.cat-ear.ear-left{left:5px}.cat-ear.ear-right{right:3px;transform:rotate(17deg)}
+.cat-body{position:absolute;bottom:0;left:8px;width:30px;height:31px;background:var(--fur);border:4px solid #291544;border-radius:12px 12px 8px 8px}
+.cat-body:after{content:"";position:absolute;bottom:-4px;left:4px;width:5px;height:10px;background:var(--shadow);box-shadow:10px 0 var(--shadow)}
+.cat-tail{position:absolute;right:-10px;bottom:9px;width:21px;height:23px;border:7px solid var(--fur);border-left:0;border-bottom:0;border-radius:0 15px 0 0;filter:drop-shadow(2px -2px 0 #291544)}
+.pixel-cat:hover .cat-sprite,.pixel-cat:focus-visible .cat-sprite{filter:drop-shadow(0 0 9px #f5baff)}
+@media(max-width:650px){.pixel-cat{width:45px;height:55px}.cat-sprite{transform:scale(.72)}.pixel-rooftop .pixel-eyes{box-shadow:10px 0 #2b153c}.pixel-rooftop .pixel-blush{box-shadow:16px 0 #e884a2}.pixel-rooftop .pixel-sleeves{display:none}}
 </style>
 </head>
 <body>
@@ -264,15 +292,16 @@ body{background-color:#130a35!important;background-image:radial-gradient(circle 
   <article id="account"><h2>👤 CONTA ARMY</h2><p id="authState">Carregando…</p><div id="authFields"><input id="nick" maxlength="22" placeholder="Seu nome ARMY (cadastro)" aria-label="Nome ARMY"><input id="email" type="email" placeholder="Seu e-mail" autocomplete="email" aria-label="E-mail"><input id="password" type="password" minlength="6" placeholder="Senha" autocomplete="current-password" aria-label="Senha"><button id="login">ENTRAR</button><button id="signup">CADASTRAR</button></div><button id="logout" hidden>SAIR</button><p id="authError" role="status"></p><p id="myScore">Entre para salvar seus cliques 💜</p></article>
   <article><h2>🏆 RANKING ARMY</h2><ol id="rankingList"><li>Carregando…</li></ol><p>Somente cliques de contas entram no ranking.</p></article>
   <article><h2>💬 CHAT ARMY</h2><div id="chatFeed" class="chat-feed">Entre para conversar 💜</div><form id="chatForm"><input id="chatText" maxlength="240" placeholder="Sua mensagem" aria-label="Mensagem" disabled><button id="sendChat" type="submit" disabled>ENVIAR</button></form><p id="chatStatus" role="status"></p></article>
-  </section><div class="skyline-caption">✦ SAME DREAM · SAME STARS ✦</div><section class="pixel-stage pixel-rooftop" aria-label="Cenário pixel art com sete personagens, gatinhos, plantas e cidade noturna">\n    <div class="pixel-moon" aria-hidden="true"></div><div class="pixel-city city-back" aria-hidden="true"></div><div class="pixel-city city-front" aria-hidden="true"></div><div class="pixel-plant plant-left" aria-hidden="true"><i></i><i></i><i></i></div><div class="pixel-plant plant-right" aria-hidden="true"><i></i><i></i><i></i></div><button type="button" class="pixel-cat cat-left" aria-label="Fazer carinho no gatinho da esquerda">🐈</button><button type="button" class="pixel-cat cat-right" aria-label="Fazer carinho no gatinho da direita">🐱</button>
+  </section><div class="skyline-caption">✦ SAME DREAM · SAME STARS ✦</div><section class="pixel-stage pixel-rooftop" aria-label="Cenário pixel art com sete personagens, gatinhos, plantas e cidade noturna">
+    <div class="pixel-moon" aria-hidden="true"></div><div class="pixel-city city-back" aria-hidden="true"></div><div class="pixel-city city-front" aria-hidden="true"></div><div class="pixel-plant plant-left" aria-hidden="true"><i></i><i></i><i></i></div><div class="pixel-plant plant-right" aria-hidden="true"><i></i><i></i><i></i></div><button type="button" class="pixel-cat cat-left" aria-label="Fazer carinho no gatinho da esquerda"><span class="cat-sprite" aria-hidden="true"><i class="cat-ear ear-left"></i><i class="cat-ear ear-right"></i><i class="cat-face"></i><i class="cat-body"></i><i class="cat-tail"></i></span></button><button type="button" class="pixel-cat cat-right" aria-label="Fazer carinho no gatinho da direita"><span class="cat-sprite ginger" aria-hidden="true"><i class="cat-ear ear-left"></i><i class="cat-ear ear-right"></i><i class="cat-face"></i><i class="cat-body"></i><i class="cat-tail"></i></span></button>
     <div class="pixel-walkers" aria-hidden="true">
-      <span class="pixel-person" style="--hair:#25213f;--shirt:#8b45ff"><i class="pixel-head"></i><i class="pixel-body"></i><i class="pixel-legs"></i></span>
-      <span class="pixel-person" style="--hair:#9b5539;--shirt:#f4e7ff"><i class="pixel-head"></i><i class="pixel-body"></i><i class="pixel-legs"></i></span>
-      <span class="pixel-person" style="--hair:#17172f;--shirt:#25213f"><i class="pixel-head"></i><i class="pixel-body"></i><i class="pixel-legs"></i></span>
-      <span class="pixel-person" style="--hair:#f3d18b;--shirt:#f4e7ff"><i class="pixel-head"></i><i class="pixel-body"></i><i class="pixel-legs"></i></span>
-      <span class="pixel-person" style="--hair:#9298ae;--shirt:#202d71"><i class="pixel-head"></i><i class="pixel-body"></i><i class="pixel-legs"></i></span>
-      <span class="pixel-person" style="--hair:#a85c37;--shirt:#2476e8"><i class="pixel-head"></i><i class="pixel-body"></i><i class="pixel-legs"></i></span>
-      <span class="pixel-person" style="--hair:#24203d;--shirt:#25213f"><i class="pixel-head"></i><i class="pixel-body"></i><i class="pixel-legs"></i></span>
+      <span class="pixel-person" style="--hair:#25213f;--shirt:#8b45ff;--pose:1" title="Personagem 1"><i class="pixel-head"><i class="pixel-fringe"></i><i class="pixel-eyes"></i><i class="pixel-blush"></i></i><i class="pixel-body"><i class="pixel-sleeves"></i></i><i class="pixel-legs"></i></span>
+      <span class="pixel-person" style="--hair:#9b5539;--shirt:#f4e7ff;--pose:2" title="Personagem 2"><i class="pixel-head"><i class="pixel-fringe"></i><i class="pixel-eyes"></i><i class="pixel-blush"></i></i><i class="pixel-body"><i class="pixel-sleeves"></i></i><i class="pixel-legs"></i></span>
+      <span class="pixel-person" style="--hair:#17172f;--shirt:#25213f;--pose:3" title="Personagem 3"><i class="pixel-head"><i class="pixel-fringe"></i><i class="pixel-eyes"></i><i class="pixel-blush"></i></i><i class="pixel-body"><i class="pixel-sleeves"></i></i><i class="pixel-legs"></i></span>
+      <span class="pixel-person" style="--hair:#f3d18b;--shirt:#f4e7ff;--pose:4" title="Personagem 4"><i class="pixel-head"><i class="pixel-fringe"></i><i class="pixel-eyes"></i><i class="pixel-blush"></i></i><i class="pixel-body"><i class="pixel-sleeves"></i></i><i class="pixel-legs"></i></span>
+      <span class="pixel-person" style="--hair:#9298ae;--shirt:#202d71;--pose:5" title="Personagem 5"><i class="pixel-head"><i class="pixel-fringe"></i><i class="pixel-eyes"></i><i class="pixel-blush"></i></i><i class="pixel-body"><i class="pixel-sleeves"></i></i><i class="pixel-legs"></i></span>
+      <span class="pixel-person" style="--hair:#a85c37;--shirt:#2476e8;--pose:6" title="Personagem 6"><i class="pixel-head"><i class="pixel-fringe"></i><i class="pixel-eyes"></i><i class="pixel-blush"></i></i><i class="pixel-body"><i class="pixel-sleeves"></i></i><i class="pixel-legs"></i></span>
+      <span class="pixel-person" style="--hair:#24203d;--shirt:#25213f;--pose:7" title="Personagem 7"><i class="pixel-head"><i class="pixel-fringe"></i><i class="pixel-eyes"></i><i class="pixel-blush"></i></i><i class="pixel-body"><i class="pixel-sleeves"></i></i><i class="pixel-legs"></i></span>
     </div>
   </section>
   <div class="footer">
