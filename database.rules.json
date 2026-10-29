@@ -2,18 +2,17 @@
   "rules": {
     "totalClicks": {
       ".read": true,
-      ".write": false
+      ".write": "auth != null && data.isNumber() && newData.isNumber() && (newData.val() === data.val() + 1 || newData.val() === data.val() + 10)"
     },
     "scores": {
       ".read": true,
       ".write": false,
       ".indexOn": [
         "clicks"
-      ]
-    },
-    "clickState": {
-      ".read": false,
-      ".write": false
+      ],
+      "$uid": {
+        ".write": "auth != null && auth.uid === $uid && auth.token.firebase.sign_in_provider !== 'anonymous' && newData.hasChildren(['name','clicks']) && newData.child('name').isString() && newData.child('name').val().length >= 2 && newData.child('name').val().length <= 22 && newData.child('clicks').isNumber() && ((!data.exists() && (newData.child('clicks').val() === 0 || newData.child('clicks').val() === 1 || newData.child('clicks').val() === 10)) || (data.exists() && newData.child('name').val() === data.child('name').val() && (newData.child('clicks').val() === data.child('clicks').val() + 1 || newData.child('clicks').val() === data.child('clicks').val() + 10)))"
+      }
     },
     "chat": {
       ".read": "auth != null && auth.token.firebase.sign_in_provider !== 'anonymous'",
